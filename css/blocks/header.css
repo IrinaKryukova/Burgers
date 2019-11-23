@@ -1,0 +1,18 @@
+.header {
+    min-height: 75px;             
+}
+.header__container {    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px; 
+    padding: 5px 80px;   
+  } 
+.header__right {
+    display: flex;
+    flex: row start; 
+}
+.header__left {
+
+}

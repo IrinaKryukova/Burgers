@@ -1,0 +1,14 @@
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+} 
+h1 {
+    font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: 400;
+}
+
+h3 {
+    font-family: 'Lifehack', Arial, Helvetica, sans-serif;
+    font-size: 65px;
+    font-weight: 500;
+}

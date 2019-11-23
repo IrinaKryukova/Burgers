@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic');
+
+@font-face {
+    font-family: 'gagalinregular';
+    src: url('../../fonts/gagalin-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/gagalin-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lifehack';
+    src: url('../../fonts/Lifehack-Medium.woff2') format('woff2'),
+        url('../../fonts/Lifehack-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
