@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Burgers</title>
+    <title>Натуральные бургеры</title>
     <link href="css/layout/normalize.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
@@ -40,8 +40,8 @@
                                 </li>
                             </ul>
                         </nav> 
-                        <div class="button">
-                            <input type="submit" class="button__order" value="Заказать">
+                        <div class="btn">
+                            <a href class="btn__order">Заказать</a>
                         </div>  
                 </div>
             </div>
@@ -78,20 +78,81 @@
                         </ul>
                     </nav>
                 </aside>
-                <section class="welcome">
-                    <div class="welcome__img">
-                        <img src='/main_img/burger.png' alt="burger">
-                    </div>
-                    <div class="welcome__desc">
-                        <h1 class="welcome__title">Мы делаем</h1>
-                        <h3>натуральные бургеры</h3>
-                    </div>
-                    <div class="arrow-scroll">
-                        <a href="#" class="arrow-scroll__link"></a>
+                <section class="section promo">
+                    <div class="container promo__container">
+                        <div class="promo__img">
+                            <img src='/main_img/burger.png' alt="burger">
+                        </div>
+                        <div class="promo__desc">
+                            <h1 class="promo__title">Мы делаем
+                                <div class="promo__subtitle">натуральные бургеры</div>
+                            </h1>
+                            
+                        </div>
+                        <div class="arrow__scroll">
+                            <a href="#" class="scroll__btn"></a>
+                        </div>
                     </div>
                 </section>
-                <section class="advantages">
-                    
+                <section class="section advantages">
+                    <h2 class="advantages__title">Мы лучшие</h2>
+                    <ul class="advantages__list advantage">
+                        <li class="advantage__item">
+                            <div class="advantage__img">
+                                <img src="advantages_img/meat.png" alt="Окорок">
+                            </div> 
+                            <h4 class="advantage__title">100% свежее мясо</h4>
+                            <p class="advantage__desc">
+                                Драма представляет собой деструктивный цикл. 
+                                Анапест представляет собой анапест. Ямб неравномерен.
+                            </p>
+                        </li>
+                        <li class="advantage__item">
+                            <div class="advantage__img">
+                                <img src="advantages_img/hand.png" alt="Рука">
+                            </div> 
+                            <h4 class="advantage__title">Ручная сборка</h4>
+                            <p class="advantage__desc">
+                                Драма представляет собой деструктивный цикл.
+                                Анапест представляет собой анапест. 
+                                Первое полустишие притягивает сюжетный реформаторский пафос.
+                            </p>
+                        </li>
+                        <li class="advantage__item">
+                            <div class="advantage__img">
+                                <img src="advantages_img/natural.png" alt="Зеленый лист">
+                            </div> 
+                            <h4 class="advantage__title">Натуральные ингредиенты</h4>
+                            <p class="advantage__desc">
+                                Драма представляет собой деструктивный цикл. 
+                                Анапест представляет собой анапест.
+                            </p>
+                        </li>                        
+                    </ul>
+                </section>
+                <section class="section reviews">
+                    <ul class="reviews__list review ">
+                        <li class="review__item">
+                            <img class="review__avatar" src="" alt="Фотография">
+                            <div class="review__hover">
+                                <h5 class="review__name"Константин Спилберг></h5>
+                                <p class="review__text">
+                                    Мысли все о них и о них, о них и о них. Нельзя устоять, 
+                                    невозможно забыть... Никогда не думал, что булочки могут 
+                                    быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+                                </p>
+                                <button class="btn" type="button">Подробнее</button>
+                            </div>
+                        </li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                        <li class="review__item"></li>
+                    </ul>
+
                 </section>
             </div>
         </div>
