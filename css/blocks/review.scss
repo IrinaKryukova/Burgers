@@ -7,8 +7,8 @@
   
 .review__item {
     flex-basis: 25%;
-    height: 50%;
     position: relative;
+    filter: grayscale(100%);
 }  
 .review__item:hover .review__hover {
      opacity: .8; 
@@ -31,9 +31,14 @@
     left: 0;
     right: 0;
     background-color: $grey;
-    padding: 50px 20px;
+    padding: 47px 19px;
     transition: opacity .4s;
 }
 .review__name {
+    margin-bottom: 17px;
     color: $white;
+}
+.review__text {
+    line-height: 24px;
+    margin-bottom: 10px;
 }

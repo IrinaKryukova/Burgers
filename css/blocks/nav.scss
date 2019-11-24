@@ -10,7 +10,7 @@
 }
 .nav__item {
     display: flex;
-    margin: 0 10px;
+    margin: 0 4px;
     align-items: center;  
 }
 .nav__item:after {
@@ -19,13 +19,13 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    margin-right: 14px;
+    margin-right: 8px;
     background-color: $white;
-    margin-left: 15px;
+    margin-left: 14px;
 }
 .nav__link {
     font-family: 'Ubuntu';
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
     color: $white;
@@ -36,8 +36,8 @@
     height: 100%;
     max-width: 20px;
     max-height: 200px;
-    top: 100px;
-    right: 20%;
+    top: 88px;
+    right: 17%;
     z-index: 5;
 }
 .nav-scroll {
@@ -47,16 +47,18 @@
 .nav-scroll__item {
     list-style-type: none;
 }
-.nav-scroll__link {
+.nav-scroll__link,
+.nav-scroll__link--active {
     position: relative;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 17px;
+    width: 17px;
     border-radius: 50%;
     border: 1px solid transparent;
-    margin-bottom: 3px;    
+    margin-bottom: 4px;    
 }
-.nav-scroll__link:before {
+.nav-scroll__link:before,
+.nav-scroll__link--active:before {
     content: '';
     width: 6px;
     height: 6px;
@@ -67,7 +69,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+  
 .nav-scroll__link--active,
 .nav-scroll__link:hover {
     border-color: $white;
