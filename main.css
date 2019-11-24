@@ -586,17 +586,17 @@ h5 {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  background: url(../../main_img/bg_promo.png) no-repeat;
+  background: url(main_img/bg_promo.png) no-repeat;
   padding: 145px 130px 50px 90px; }
 
-.promo::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url(../../main_img/texture.png) repeat; }
-
+/*.promo::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(main_img/texture.png) repeat;
+}*/
 .promo__img {
   position: relative;
   text-align: center;
