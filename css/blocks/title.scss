@@ -2,30 +2,30 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 } 
 h1 {
-    font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+    @include gagalin();
     font-size: 72px;
     font-weight: 400;
 }
 h2 {
-    font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+    @include gagalin();
     font-size: 72px;
     font-weight: 400;
 }
 
 h3 {
-    font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+    @include gagalin();
     font-size: 40px;
     font-weight: 400;
 }
 
 h4 {
-    font-family: 'Lifehack', Arial, Helvetica, sans-serif;
+    @include lifehack();
     font-size: 24px;
     font-weight: 500;
     text-transform: none;
 }
 h5 {
-    font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+    @include gagalin();
     font-size: 14px;
     font-weight: 400;
 }
