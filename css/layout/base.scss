@@ -16,6 +16,7 @@ header {
 }
 
 .wrapper {
+    position: relative;
     overflow: hidden;
     width: 100%;
     min-width: 1100px;
@@ -47,7 +48,8 @@ ui li {
     list-style: none;
 }
 p {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
     line-height: 30px;
 }
 * {

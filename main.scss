@@ -1,0 +1,28 @@
+//colors
+$orange: #e45028;
+$yellow: #f9b43b;
+$grey: #2f3234;
+$black: #1f2122;
+$red: #c1401e;
+$white: #fff;
+
+//normalize
+@import "css/layout/normalize";
+
+//layout
+@import "css/layout/fonts";
+@import "css/layout/base";
+
+//blocks
+@import "css/blocks/header";
+@import "css/blocks/nav";
+@import "css/blocks/btn";
+@import "css/blocks/title";
+@import "css/blocks/promo";
+@import "css/blocks/advantage";
+@import "css/blocks/review";
+
+
+
+
+

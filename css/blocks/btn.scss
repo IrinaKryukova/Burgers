@@ -1,0 +1,36 @@
+.btn__order {    
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 13px 21px;
+    border: 0;
+    border-radius: 4px;
+    background: $orange;
+    color: $white;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn__order:hover {
+    background: $red;
+}
+.btn__more {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 13px 21px;
+    border: 0;
+    border-radius: 4px;
+    background: $grey;
+    color: $white;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn__more:hover {
+    background: $black;
+}
