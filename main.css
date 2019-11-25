@@ -352,7 +352,7 @@ header {
 
 .container {
   margin: 0 auto;
-  max-width: 1100px;
+  /*max-width: 1100px;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,6 +406,7 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  max-width: 1100px;
   min-height: 75px;
   padding: 13px 81px 0 76px;
   min-width: 1100px; }
@@ -653,7 +654,7 @@ h5 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url(advantages_img/bg.png) no-repeat;
+  background: url(advantages_img/bg.png) center center/cover no-repeat;
   padding: 113px 70px; }
 
 .advantages__title {
@@ -664,6 +665,7 @@ h5 {
   margin-bottom: 30px; }
 
 .advantages__list {
+  max-width: 970px;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -681,6 +683,9 @@ h5 {
 
 .advantage__img {
   margin-bottom: 23px; }
+
+.advantage__title {
+  margin-bottom: 5px; }
 
 .reviews__list {
   height: 100%;

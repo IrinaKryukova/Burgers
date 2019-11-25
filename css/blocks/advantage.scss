@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;  
     align-items: center;  
-    background: url(advantages_img/bg.png) no-repeat;
+    background: url(advantages_img/bg.png) center center/cover no-repeat;
     padding: 113px 70px;
 }
 .advantages__title {
@@ -13,6 +13,7 @@
     margin-bottom: 30px;
 }
 .advantages__list {
+    max-width: 970px;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -24,4 +25,7 @@
 }
 .advantage__img {
     margin-bottom: 23px;
+}
+.advantage__title {
+    margin-bottom: 5px;
 }
