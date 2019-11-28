@@ -738,3 +738,60 @@ h5 {
 .review__text {
   line-height: 24px;
   margin-bottom: 10px; }
+
+.team {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: url(team_img/team_bg.png) center center/cover no-repeat;
+  padding: 50px 100px; }
+
+.team__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  padding: 88px 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #2f3234;
+  opacity: 0.93; }
+
+.team__title {
+  margin-bottom: 26px;
+  color: #f9b43b; }
+
+.team-members {
+  color: #fff; }
+
+.member__item {
+  margin-bottom: 32px;
+  list-style-type: none; }
+
+.member__desc {
+  overflow: hidden;
+  height: 0; }
+
+.member__name:hover {
+  color: #f9b43b; }
+
+.member__name:before {
+  content: "";
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 9px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #f9b43b;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }

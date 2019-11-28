@@ -1,0 +1,47 @@
+.team {
+    position: relative;
+    width: 100%;
+    display: flex;
+    background: url(team_img/team_bg.png) center center/cover no-repeat;
+    padding: 50px 100px;
+}
+.team__container {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 88px 95px;
+    display: flex;
+    flex-direction: column;
+    background-color: $grey;
+    opacity: 0.93;
+}
+.team__title {
+    margin-bottom: 26px;
+    color: $yellow; 
+}
+.team-members {
+    
+    color: $white;
+}
+.member__item {
+    margin-bottom: 32px;
+    list-style-type: none;
+}
+.member__desc {
+    overflow: hidden;
+    height:0;
+}
+.member__name:hover {
+    color: $yellow;
+}
+.member__name:before {
+    content: "";
+    display: inline-flex;
+    margin-right: 9px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid $yellow;
+    transition: .3s;
+}
