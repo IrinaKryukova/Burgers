@@ -48,7 +48,10 @@ ui li {
 p {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
-    line-height: 30px;
+    line-height: 20px;
+}
+img, embed, object, video {
+    max-width: 100%;
 }
 * {
     box-sizing: border-box;

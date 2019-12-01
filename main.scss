@@ -5,6 +5,7 @@ $grey: #2f3234;
 $black: #1f2122;
 $red: #c1401e;
 $white: #fff;
+$green: #8BC03F;
 
 //normalize
 @import "css/layout/normalize";
@@ -21,7 +22,12 @@ $white: #fff;
 @import "css/blocks/promo";
 @import "css/blocks/advantage";
 @import "css/blocks/review";
-@import "css/blocks/team"
+@import "css/blocks/team";
+@import "css/blocks/menu";
+@import "css/blocks/location";
+@import "css/blocks/socials";
+@import "css/blocks/contacts";
+@import "css/blocks/footer";
 
 
 

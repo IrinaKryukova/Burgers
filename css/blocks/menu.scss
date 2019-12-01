@@ -1,0 +1,59 @@
+.menu__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: url(menu_img/menu_bg.png) center center/cover no-repeat;
+    padding: 86px 100px 30px;
+}
+.menu__title {
+    margin-left: 202px;
+    color: $white;
+}
+.menu-types {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: $grey;
+    color: $white;
+    opacity: 0.63;
+}
+.menu-types__list {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+}
+.submenu__item, .submenu__item--active  { 
+    position: relative;   
+    width: 17%;
+    height: 100%;
+}
+.menu__meat {
+    background: url(menu_img/meat_menu.png) center center no-repeat;   
+}
+.menu__vegetarian {
+    background: url(menu_img/vegetarian_menu.png) center center no-repeat;
+}
+.menu__diet {
+    background: url(menu_img/diet_menu.png) center center no-repeat;
+}
+.submenu__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: rotate(-90deg);
+    color: $white; 
+}
+
+.submenu__desk {
+    overflow: hidden;
+    width:0;
+    height: 100%;
+}
+.submenu__desk p {
+
+}

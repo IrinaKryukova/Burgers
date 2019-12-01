@@ -25,13 +25,13 @@
     
     color: $white;
 }
+.team-members__list {
+    display: flex;
+    flex-wrap: wrap;
+}
 .member__item {
     margin-bottom: 32px;
     list-style-type: none;
-}
-.member__desc {
-    overflow: hidden;
-    height:0;
 }
 .member__name:hover {
     color: $yellow;
@@ -44,4 +44,21 @@
     border-right: 5px solid transparent;
     border-top: 7px solid $yellow;
     transition: .3s;
+}
+.member__desc {
+    overflow: hidden;
+    height:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.member__avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.member__special {
+    font-size: 14px;
 }
