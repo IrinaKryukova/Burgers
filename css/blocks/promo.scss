@@ -6,6 +6,7 @@
     background: url(main_img/bg_promo.png) center center/cover no-repeat;
     padding: 5rem 8.125rem 3.125rem 6.625em; 
     @include tablets {
+        align-items: center;
         text-align: center;
         padding: 0;
     }
@@ -22,6 +23,9 @@
     text-align: center;
     min-width: 28.1875rem;
     z-index: 3;
+    @include tablets {
+        /*min-width: 33rem;*/
+    }
 }
 .promo__img::after {
     content: '';

@@ -630,6 +630,9 @@ h5 {
   padding: 5rem 8.125rem 3.125rem 6.625em; }
   @media screen and (max-width: 768px) {
     .promo {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
       text-align: center;
       padding: 0; } }
 
@@ -649,6 +652,9 @@ h5 {
   text-align: center;
   min-width: 28.1875rem;
   z-index: 3; }
+  @media screen and (max-width: 768px) {
+    .promo__img {
+      /*min-width: 33rem;*/ } }
 
 .promo__img::after {
   content: '';
@@ -1124,7 +1130,8 @@ h5 {
 
 .phone__number {
   font-weight: 700;
-  color: #e45028; }
+  color: #e45028;
+  text-decoration: none; }
 
 .footer {
   position: absolute;
@@ -1153,6 +1160,9 @@ h5 {
   align-items: center;
   padding: 0.5625rem 4.375rem 0.3125rem 5rem;
   color: #fff; }
+  @media screen and (max-width: 768px) {
+    .footer__container {
+      padding: 0; } }
   @media screen and (max-width: 480px) {
     .footer__container {
       -webkit-box-orient: vertical;
