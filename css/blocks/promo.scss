@@ -5,9 +5,7 @@
     flex-direction: row;    
     background: url(main_img/bg_promo.png) center center/cover no-repeat;
     padding: 5rem 8.125rem 3.125rem 6.625em; 
-    @include tablets {
-        align-items: center;
-        text-align: center;
+    @include tablets {       
         padding: 0;
     }
 }
@@ -15,6 +13,8 @@
     display: flex;
     @include tablets {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
 }
