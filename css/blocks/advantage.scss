@@ -4,15 +4,15 @@
     flex-direction: column;  
     align-items: center;  
     background: url(advantages_img/bg.png) center center/cover no-repeat;
-    padding: 113px 70px;
+    padding: 7.0625rem 4.375rem;
 }
 .advantages__title {
     display: flex;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 .advantages__list {
-    max-width: 970px;
+    max-width: 60.625rem;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -23,23 +23,23 @@
     max-width: 30%;
 }
 .advantage__img {
-    margin-bottom: 23px;
+    margin-bottom: 1.4375rem;
 }
 
 .icon-meat {
-    width: 97px;
-    height: 89px;
+    width: 6.0625rem;
+    height: 5.5625rem;
     fill: $orange;
 }
 .icon-hand {
-    width: 73px;
-    height: 85px;
+    width: 4.5625rem;
+    height: 5.3125rem;
 }
 .icon-natural {
-    width: 88px;
-    height: 75px;
+    width: 5.5rem;
+    height: 4.6875rem;
     fill: $green;
 }
 .advantage__title {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }

@@ -1,0 +1,43 @@
+.order {
+    background: url("../../form__img/bg-texture.png") center center/cover no-repeat; 
+    background-color: $grey;
+    display: flex;
+    align-items: center;
+    .section__title {
+        text-align: center;
+    }
+}
+.order__title {
+    margin-bottom: 1.625rem;
+    color: $yellow; 
+}
+
+.order-form__elem {
+    display: flex;
+    flex-direction: row;
+}
+.order-form__col {
+    max-width: 28.75rem;
+    width: 50%;
+}
+.order-form__row {
+    display: flex;    
+    margin-bottom: 0.9375rem;
+}
+
+.order-form__block {
+    flex: 1;
+    margin-left: 1.25rem;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+.order-form__input {
+    font-size: 0.875rem;
+    padding: 0.625rem;
+    padding: 0.3125rem 0.625rem;
+    border: 0.0625rem solid #d1cfcb;
+    border-radius: 0.3125rem;
+    width: 100%;
+}    

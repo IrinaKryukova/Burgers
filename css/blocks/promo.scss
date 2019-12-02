@@ -2,14 +2,25 @@
     position: relative;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
     background: url(main_img/bg_promo.png) center center/cover no-repeat;
-    padding: 80px 130px 50px 106px;
+    padding: 5rem 8.125rem 3.125rem 6.625em; 
+    @include tablets {
+        text-align: center;
+        padding: 0;
+    }
+}
+.promo__container {
+    display: flex;
+    @include tablets {
+        flex-direction: column;
+    }
+
 }
 .promo__img {
     position: relative;
     text-align: center;
-    min-width: 451px;
+    min-width: 28.1875rem;
     z-index: 3;
 }
 .promo__img::after {
@@ -22,8 +33,11 @@
     background: url(main_img/drops.png) no-repeat;
 }
 .promo__desc {
-    margin-top: 121px;
-    max-width: 415px;
+    margin-top: 7.5625rem;
+    max-width: 25.9375rem;
+    @include tablets {
+        margin-top: 2rem;
+    }
 }
 
 .promo__title {
@@ -31,21 +45,21 @@
 }
 .promo__subtitle {
     @include lifehack();
-    font-size: 65px;
+    font-size: 4.0625rem;
     font-weight: 500;
     color: $white;
-    line-height: 65px;
+    line-height: 4.0625rem;
 }
 
 .scroll__btn {
-    width: 29px;
-    height: 15px;
+    width: 1.8125rem;
+    height: 0.9375rem;
     background-image: url(main_img/arrow-scroll.png);
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
     position: absolute;
-    bottom: 41px;
+    bottom: 2.5625rem;
     left: 50%;
     transform: translateX(-50%);
   }

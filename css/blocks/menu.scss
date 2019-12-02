@@ -3,18 +3,18 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background: url(menu_img/menu_bg.png) center center/cover no-repeat;
-    padding: 86px 100px 30px;
+    background: url(menu_img/menu_bg.png) center center/cover no-repeat;    
 }
 .menu__title {
-    margin-left: 202px;
+    margin-left: 12.625rem;
     color: $white;
+    padding: 5.375rem 6.25rem
 }
 .menu-types {
     position: absolute;
     top:0;
     right: 0;
-    width: 30%;
+    width: 16%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -23,14 +23,17 @@
     opacity: 0.63;
 }
 .menu-types__list {
+    display: flex;
+    flex-direction: row;
     list-style-type: none;
     height: 100%;
     width: 100%;
 }
 .submenu__item, .submenu__item--active  { 
     position: relative;   
-    width: 17%;
-    height: 100%;
+    width: 32%;
+    height: 100%;    
+    opacity: 0.65;
 }
 .menu__meat {
     background: url(menu_img/meat_menu.png) center center no-repeat;   
@@ -55,5 +58,7 @@
     height: 100%;
 }
 .submenu__desk p {
-
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
 }
