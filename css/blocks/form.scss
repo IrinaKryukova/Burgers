@@ -9,16 +9,25 @@
 .order__title {
     margin-bottom: 1.625rem;
     color: $yellow; 
+    @include phones {
+        text-align: center;
+    }
 }
 
 .order-form__elem {
     display: flex;
     flex-direction: row;
+    @include tablets {
+        flex-direction: column;
+    }
 }
 .order-form__col {
     max-width: 28.75rem;
     width: 50%;
     margin: 0 0.875rem;
+    @include tablets {
+        width: 100%;
+    }
 }
 .order-form__row {
     display: flex;    
@@ -46,6 +55,9 @@
     width: 100%; 
     
 } 
+.textarea {
+    height: 100%;
+}
 .order-form__input__textarea {
     height: 6,8125rem;
 }

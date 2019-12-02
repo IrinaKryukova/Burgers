@@ -2,6 +2,9 @@ html {
     @include laptop {
       font-size: 0.9375rem;
     }
+    @include tablets {
+        font-size: 0.875rem;
+    }
     @include phones {
       font-size: 0.8125rem;
     }
@@ -46,6 +49,9 @@ header {
     overflow: hidden;
     @include tablets {
         min-height: 50rem; 
+    }
+    @include phones {
+        min-height: 55rem; 
     }
 }
 .page-content__container {

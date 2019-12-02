@@ -5,7 +5,10 @@
     align-items: center;
     max-width: 68.75rem;
     min-height: 4.6875rem; 
-    padding: 0.81250rem 5.0625rem 0 4.75rem;    
+    padding: 0.81250rem 4.375rem 0 4.375rem;   
+    @include laptop {
+        padding: 1% 3%;
+    } 
     @include tablets {
         padding: 1rem;       
     }

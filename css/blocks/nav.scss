@@ -40,6 +40,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $white;
+    @include laptop {
+        font-size: 0.75rem;
+    }
 }
 
 .sidebar-scroll {

@@ -1,9 +1,15 @@
 .block-socials { 
     margin-left: 1.0625rem;
+    @include phones {
+        margin-left: 0;
+    }
 }
 .socials__list {
     display: flex;
     justify-content: flex-end;
+    @include phones {
+        justify-content: center;
+    }
 }
 
 .socials__item {

@@ -34,6 +34,7 @@
     display: flex;
     flex-wrap: wrap;
     @include tablets {
+        flex-direction: column;
 		justify-content: center;	
 	}
 }
@@ -69,13 +70,23 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    @include tablets {
+        flex-direction: column;
+		align-items: center;	
+	}
 }
 .member__item:hover .member__desc {
     overflow: visible;
     height: 6.25rem;
+    @include tablets {
+        height: 12.5rem;
+    }
 }
 .member__content {
     width: 13rem;
+    @include tablets {
+        width: 20.625rem;
+    }
 }
 .member__pic {
     margin-right: 1rem;
@@ -84,7 +95,10 @@
     display: block;
     width: 6.25rem;
     height: 6.25rem;
-    border-radius: 50%;    
+    border-radius: 50%; 
+    @include tablets {
+        display: inline-flex;
+    }   
 }
 
 .member__special {
