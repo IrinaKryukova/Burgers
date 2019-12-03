@@ -52,14 +52,14 @@
     padding: 0.3125rem 0.625rem;
     border: 0.0625rem solid $white;
     border-radius: 0.3125rem;
-    width: 100%; 
-    
+    width: 100%;     
 } 
+
 .textarea {
-    height: 100%;
+    margin-bottom: 0;
 }
 .order-form__input__textarea {
-    height: 6,8125rem;
+    height: 5.6875rem;
 }
 .order-radio__visible, 
 .order-radio__visible__checkbox,
@@ -112,36 +112,36 @@
     left: 50%;
     transform: translate(-45%, -45%);  
     background:  $orange; 
-    border-radius: 50%;    
+    border-radius: 50%;
+    transition: .3s;    
 } 
 .order-radio__elem:checked ~ .order-radio__visible__checkbox:before {
     display: block;
     content: '';
-    background: url('../../form__img/checkbox_img.png') center center no-repeat;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-45%, -45%);  
-    
-} 
-/*.order-form__button {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.075rem;
-    text-transform: uppercase;
-    padding: 0.625rem 0.5rem;
-    border: 0;
-    border-radius: 0.25rem;
-    background: $orange;
-    color: $white;
-    cursor: pointer;
+    position: absolute;    
     transition: .3s;
+    left: 3%;
+    top: 8%;
+    width: 0.625rem;
+    height: 0.3125rem;
+    border-radius: 1px;
+    border-left: 0.25rem solid $orange;
+    border-bottom: 0.25rem solid $orange;
+    transform: rotate(-45deg);  
+} 
+.order-form__buttons {
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
-.order-form__button:hover{
-    background: $red;
-}*/
+.order-radio {
+    @include phones {
+        margin-bottom: 1rem;
+    }
+}
+
 .order-form__button:focus{
     outline:none;
 }  

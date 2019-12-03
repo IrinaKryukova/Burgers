@@ -1,10 +1,9 @@
 .nav {
-    transform: translateY(25%);
+    transform: translateY(14%);
     
     @include tablets {
 		display: none;
 	}
-
 }
 
 .nav__list {
@@ -18,8 +17,11 @@
 .nav__item {
     display: flex;
     margin: 0 0.25rem;
-    align-items: center;  
+    align-items: center; 
+    flex: 1 1 auto;
+    justify-content: space-between; 
 }
+
 .nav__item:after {
     content: "";
     display: block;
@@ -29,6 +31,9 @@
     margin-right: 0.4rem;
     background-color: $white;
     margin-left: 0.875rem;
+    @include laptop {
+        margin-right: 0;
+    }
 }
 .nav__item:last-child.nav__item:after {
     display: none;
