@@ -522,6 +522,9 @@ img, embed, object, video {
   top: 5.5rem;
   right: 17%;
   z-index: 5; }
+  @media screen and (max-width: 768px) {
+    .sidebar-scroll {
+      display: none; } }
 
 .nav-scroll {
   width: 100%;
@@ -644,7 +647,10 @@ h5 {
 .promo__container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   @media screen and (max-width: 768px) {
     .promo__container {
       -webkit-box-orient: vertical;
@@ -659,7 +665,8 @@ h5 {
 .promo__img {
   position: relative;
   text-align: center;
-  min-width: 28.1875rem;
+  margin-bottom: 7rem;
+  /*min-width: 28.1875rem;*/
   z-index: 3; }
   @media screen and (max-width: 768px) {
     .promo__img {
@@ -672,10 +679,10 @@ h5 {
   right: 4%;
   width: 100%;
   height: 100%;
-  background: url(main_img/drops.png) no-repeat; }
+  background: url(main_img/drops.png) no-repeat;
+  background-size: contain; }
 
 .promo__desc {
-  margin-top: 7.5625rem;
   max-width: 25.9375rem; }
   @media screen and (max-width: 768px) {
     .promo__desc {
@@ -720,6 +727,18 @@ h5 {
   background: url(advantages_img/bg.png) center center/cover no-repeat;
   padding: 7.0625rem 4.375rem; }
 
+.advantages__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .advantages__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -739,13 +758,32 @@ h5 {
   flex-direction: row;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
+  @media screen and (max-width: 480px) {
+    .advantages__list {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
 
 .advantage__item {
   text-align: center;
   max-width: 30%; }
+  @media screen and (max-width: 480px) {
+    .advantage__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      max-width: 95%;
+      text-align: left;
+      margin-bottom: 1.5rem; } }
 
 .advantage__img {
-  margin-bottom: 1.4375rem; }
+  margin-bottom: 1.4375rem;
+  min-width: 30%; }
 
 .icon-meat {
   width: 6.0625rem;

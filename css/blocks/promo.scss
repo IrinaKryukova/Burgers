@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;   
     background: url(main_img/bg_promo.png) center center/cover no-repeat;
     padding: 5rem 8.125rem 3.125rem 6.625em; 
     @include tablets {       
@@ -11,6 +11,7 @@
 }
 .promo__container {
     display: flex;
+    align-items: center; 
     @include tablets {
         flex-direction: column;
         align-items: center;
@@ -21,7 +22,8 @@
 .promo__img {
     position: relative;
     text-align: center;
-    min-width: 28.1875rem;
+    margin-bottom: 7rem;
+    /*min-width: 28.1875rem;*/
     z-index: 3;
     @include tablets {
         /*min-width: 33rem;*/
@@ -35,9 +37,9 @@
     width: 100%;
     height: 100%;
     background: url(main_img/drops.png) no-repeat;
+    background-size: contain;
 }
-.promo__desc {
-    margin-top: 7.5625rem;
+.promo__desc {    
     max-width: 25.9375rem;
     @include tablets {
         margin-top: 2rem;
