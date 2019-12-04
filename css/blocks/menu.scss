@@ -21,6 +21,9 @@
     padding: 0;
     justify-content: flex-end;
     width: 50%;
+    @include phones {
+        width: 100%;
+    }
 }
 .menu-acco__item {
     border: 1px solid $grey;

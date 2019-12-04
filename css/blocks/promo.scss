@@ -5,7 +5,7 @@
     flex-direction: row;   
     background: url(main_img/bg_promo.png) center center/cover no-repeat;
     padding: 5rem 8.125rem 3.125rem 6.625em; 
-    @include tablets {       
+    @include laptop {       
         padding: 0;
     }
 }
@@ -22,12 +22,13 @@
 .promo__img {
     position: relative;
     text-align: center;
-    margin-bottom: 7rem;
-    /*min-width: 28.1875rem;*/
-    z-index: 3;
-    @include tablets {
-        /*min-width: 33rem;*/
-    }
+    margin-bottom: 7rem;   
+    z-index: 3; 
+    @include phones {
+        margin-bottom: 0;
+        margin-top: 5rem;
+        width: 90%; 
+    }   
 }
 .promo__img::after {
     content: '';
@@ -48,6 +49,9 @@
 
 .promo__title {
     color: $yellow;
+    @include laptop {
+        font-size: 4rem;
+    }
 }
 .promo__subtitle {
     @include lifehack();
@@ -55,6 +59,9 @@
     font-weight: 500;
     color: $white;
     line-height: 4.0625rem;
+    @include laptop {
+        font-size: 3.25rem;
+    }
 }
 
 .scroll__btn {

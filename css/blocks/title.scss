@@ -10,6 +10,9 @@ h2 {
     @include gagalin();
     font-size: 4.5rem;
     font-weight: 400;
+    @include phones {
+        font-size: 4rem;
+    }
 }
 
 h3 {

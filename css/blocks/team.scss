@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     background: url(team_img/team_bg.png) center center/cover no-repeat;
-    padding: 3.125rem 6.25rem;
+    padding: 5.5rem 5.9375rem;    
 }
 .team__container {
     position: absolute;
@@ -11,15 +11,15 @@
     right: 0;
     width: 50%;
     height: 100%;
-    padding: 5.5rem 5.9375rem;
+    /*padding: 5.5rem 5.9375rem;*/
     display: flex;
     flex-direction: column;
     background-color: $grey;
     opacity: 0.93;
-
     @include tablets {
 		width: 100%;
-		text-align: center;		
+        text-align: center;	
+        padding: 5rem 2rem;	
 	}
 }
 .team__title {

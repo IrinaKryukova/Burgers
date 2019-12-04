@@ -22,13 +22,17 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 0.625rem 0.5625rem;
-    border: 0;
+    border: 1px solid $black;
     border-radius: 0.25rem;
     background: $grey;
     color: $white;
     cursor: pointer;
     transition: .3s;
+    @include phones {
+        content: "Читать отзыв";
+    }
 }
 .btn__more:hover {
     background: $black;
+    border: 1px solid $black;
 }

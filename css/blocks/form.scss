@@ -20,6 +20,14 @@
     @include tablets {
         flex-direction: column;
     }
+    @include phones {
+        align-items: center;
+    }
+}
+.order-form__block--last {
+    @include phones {
+       display: none;
+    }
 }
 .order-form__col {
     max-width: 28.75rem;
@@ -27,6 +35,9 @@
     margin: 0 0.875rem;
     @include tablets {
         width: 100%;
+    }
+    @include phones {
+        width: 90%;
     }
 }
 .order-form__row {
