@@ -66,16 +66,14 @@
 
 .scroll__btn {
     width: 1.8125rem;
-    height: 0.9375rem;    
-    background-repeat: no-repeat;
-    background-size: contain;
+    height: 0.9375rem;   
     display: block;
     position: absolute;
     bottom: 2.5625rem;
     left: 50%;
     transform: translateX(-50%);
 }
-.arrow-scroll {
+.arrow-scroll__pic {
     width: 1.75rem;
     height: 0.875rem;
     fill: $white;
