@@ -49,6 +49,9 @@
     @include laptop {
         font-size: 0.75rem;
     }
+    @include tablets {
+        font-size: 1.5rem;
+    }
 }
 
 .sidebar-scroll {

@@ -66,8 +66,7 @@
 
 .scroll__btn {
     width: 1.8125rem;
-    height: 0.9375rem;
-    background-image: url(main_img/arrow-scroll.png);
+    height: 0.9375rem;    
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
@@ -75,4 +74,14 @@
     bottom: 2.5625rem;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
+.arrow-scroll {
+    width: 1.75rem;
+    height: 0.875rem;
+    fill: $white;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+}

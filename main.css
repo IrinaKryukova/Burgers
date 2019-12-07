@@ -514,6 +514,9 @@ img, embed, object, video {
   @media screen and (max-width: 992px) {
     .nav__link {
       font-size: 0.75rem; } }
+  @media screen and (max-width: 768px) {
+    .nav__link {
+      font-size: 1.5rem; } }
 
 .sidebar-scroll {
   position: fixed;
@@ -569,10 +572,11 @@ img, embed, object, video {
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0.625rem 0.5rem;
+  padding: 0.5625rem 15px;
+  padding: 0.625rem 0.9375rem;
   border: 0;
   border-radius: 0.25rem;
-  background: #e45028;
+  background: #e35028;
   color: #fff;
   cursor: pointer;
   -webkit-transition: .3s;
@@ -717,7 +721,6 @@ h5 {
 .scroll__btn {
   width: 1.8125rem;
   height: 0.9375rem;
-  background-image: url(main_img/arrow-scroll.png);
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
@@ -727,6 +730,14 @@ h5 {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
+
+.arrow-scroll {
+  width: 1.75rem;
+  height: 0.875rem;
+  fill: #fff;
+  opacity: 0.5; }
+  .arrow-scroll:hover {
+    opacity: 1; }
 
 .advantages {
   width: 100%;
@@ -763,7 +774,7 @@ h5 {
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  margin-bottom: 1.875rem; }
+  margin-bottom: 0.875rem; }
   @media screen and (max-width: 480px) {
     .advantages__title {
       font-size: 4rem; } }
@@ -810,7 +821,7 @@ h5 {
 .icon-meat {
   width: 6.0625rem;
   height: 5.5625rem;
-  fill: #e45028; }
+  fill: #e35028; }
 
 .icon-hand {
   width: 4.5625rem;
@@ -1076,9 +1087,8 @@ h5 {
       width: 100%; } }
 
 .menu-acco__item {
-  border: 1px solid #2f3234;
   height: 100%;
-  min-width: 50px;
+  min-width: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1096,7 +1106,7 @@ h5 {
 .menu-acco__trigger {
   position: relative;
   height: 100%;
-  width: 50px;
+  width: 5rem;
   display: block; }
 
 .menu-acco__trigger-text {
@@ -1205,11 +1215,11 @@ h5 {
 .icon-phone {
   width: 0.75rem;
   height: 0.6875rem;
-  fill: #e45028; }
+  fill: #e35028; }
 
 .phone__number {
   font-weight: 700;
-  color: #e45028;
+  color: #e35028;
   text-decoration: none; }
 
 .footer {
@@ -1408,7 +1418,7 @@ h5 {
   -webkit-transform: translate(-45%, -45%);
   -ms-transform: translate(-45%, -45%);
   transform: translate(-45%, -45%);
-  background: #e45028;
+  background: #e35028;
   border-radius: 50%;
   -webkit-transition: .3s;
   -o-transition: .3s;
@@ -1426,8 +1436,8 @@ h5 {
   width: 0.625rem;
   height: 0.3125rem;
   border-radius: 1px;
-  border-left: 0.25rem solid #e45028;
-  border-bottom: 0.25rem solid #e45028;
+  border-left: 0.25rem solid #e35028;
+  border-bottom: 0.25rem solid #e35028;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg); }
@@ -1492,8 +1502,136 @@ h5 {
 .hamburger-menu__bars:after {
   bottom: 0; }
 
-.burger {
-  background: url("../../burgers_img/Rectangle_1.png") center center/cover no-repeat; }
+.slider__container {
+  background: url("../../burgers_img/Rectangle_1.png") center center/cover no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 58.75rem;
+  overflow: hidden;
+  margin: 0 10px;
+  color: #fff; }
+
+.slider__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  will-change: right; }
+
+.burger__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 58.75rem;
+  height: 100%; }
+
+.burger__pic {
+  margin-right: 2rem; }
+
+.icon-burger {
+  fill: #fff;
+  width: 2.875rem;
+  height: 2.75rem; }
+
+.icon-kkal {
+  fill: #fff;
+  width: 3.75rem;
+  height: 3.75rem;
+  position: relative; }
+
+.burger__img {
+  min-width: 28.125rem; }
+
+.burger__ingredients {
+  width: 5.625rem;
+  height: 5.625rem;
+  background-color: #e35028;
+  opacity: 0.7;
+  border-radius: 0.3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.kkal__number {
+  width: 3.75rem;
+  height: 6.125rem;
+  text-align: center;
+  opacity: .5; }
+
+.value-kkal {
+  position: relative;
+  padding-top: 0.5rem; }
+
+.value {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  font-size: 1.125rem; }
+
+.burger__title {
+  line-height: 4.0625rem;
+  margin-top: 1.125rem;
+  margin-bottom: 2.4375rem; }
+
+.burger__desk p {
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem; }
+
+.burger__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  color: #e35028; }
+
+.price {
+  margin-right: 1.625rem; }
+
+.currency {
+  font-size: 1.875rem; }
+
+.nav_hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .full-screen__menu {
   position: fixed;
@@ -1513,6 +1651,11 @@ h5 {
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s; }
+  @media screen and (max-width: 768px) {
+    .full-screen__menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
   .full-screen__menu_visible {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1526,8 +1669,24 @@ h5 {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+    @media screen and (max-width: 768px) {
+      .full-screen__menu .nav__list {
+        margin: 0; } }
   .full-screen__menu .nav__item {
-    font-size: 1.5rem; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 1rem 0; }
+    .full-screen__menu .nav__item:after {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 1rem 0 0;
+      width: 0.3125rem;
+      height: 0.3125rem; }
 
 .menu__logo {
   position: absolute;

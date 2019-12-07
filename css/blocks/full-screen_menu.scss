@@ -1,3 +1,6 @@
+.nav_hamburger { 
+	display: flex;
+}
 .full-screen__menu {
     position: fixed;
 	top: 0;
@@ -10,22 +13,37 @@
 	z-index: 30;
 	display: none;
 	transition: opacity .3s;
+	@include tablets {
+		display: flex;
+	}
 
 	&_visible {
 		display: flex;
 		opacity: 1;
 	}
-	.nav__list {
+	.nav__list {		
 		display: flex;
 		flex-direction: column;
+		@include tablets {
+			margin: 0;
+		}
+		
 	}
+		
 		.nav__item {
-		font-size: 1.5rem;
+		display: flex;
+		flex-direction: column;		
+		margin: 1rem 0;
+		   
+		&:after	{
+			display: inline-block;
+    		vertical-align: middle;
+			margin: 1rem 0 0;
+			width: 0.3125rem;
+    		height: 0.3125rem;
+				}
 		}
 }
-
-	
-
 		
 .menu__logo {
 	position: absolute;
