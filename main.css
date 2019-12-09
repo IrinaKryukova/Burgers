@@ -1603,6 +1603,9 @@ h5 {
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
       margin-right: 0; } }
 
 .burger__desc {
@@ -1640,7 +1643,10 @@ h5 {
   min-width: 28.125rem; }
   @media screen and (max-width: 768px) {
     .burger__img {
-      width: 90%; } }
+      width: 70%; } }
+  @media screen and (max-width: 768px) and (max-width: 480px) {
+    .burger__img {
+      width: 50%; } }
 
 .burger__ingredients {
   width: 5.625rem;

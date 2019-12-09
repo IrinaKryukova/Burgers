@@ -62,6 +62,7 @@
     @include tablets {
         display: flex;
         flex-direction: row;
+        justify-content: center;
         margin-right:0;
     }
 }
@@ -90,7 +91,10 @@
 .burger__img {
     min-width: 28.125rem;
     @include tablets {
-        width: 90%;
+        width: 70%;
+        @include phones {
+            width: 50%;
+        }
     }
 }
 

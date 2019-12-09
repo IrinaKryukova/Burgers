@@ -8,13 +8,14 @@ const menuClose = document.getElementById('menu_close');
 
 menuButton.addEventListener('click', function () {
      
-   // body.classList.add('body_closed');
+    body.classList.add('body_closed');   
     fullScreenMenu.classList.add('full-screen__menu_active');
    
 });
 
 menuClose.addEventListener('click', function () {
-   // body.classList.remove('body_closed');
+    
+    body.classList.remove('body_closed');
     fullScreenMenu.classList.remove('full-screen__menu_active');
 
 });
