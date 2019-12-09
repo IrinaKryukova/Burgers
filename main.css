@@ -1518,19 +1518,15 @@ h5 {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto; }
+  height: 100%; }
 
 .slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  min-width: 60.75rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0 2rem;
   overflow: hidden;
   color: #fff; }
@@ -1553,10 +1549,10 @@ h5 {
   top: 50%; }
 
 .arrow__left {
-  left: 7%; }
+  left: 0; }
 
 .arrow__right {
-  right: 7%; }
+  right: 0; }
 
 .arrow-scroll__pic.left {
   -webkit-transform: rotate(90deg);
@@ -1593,20 +1589,19 @@ h5 {
       width: 100%; } }
 
 .burger__pic {
-  margin-right: 2rem; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   @media screen and (max-width: 768px) {
     .burger__pic {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-right: 0; } }
+      position: relative;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .burger__desc {
   text-align: left;
@@ -1643,10 +1638,11 @@ h5 {
   min-width: 28.125rem; }
   @media screen and (max-width: 768px) {
     .burger__img {
+      padding-top: 5rem;
       width: 70%; } }
   @media screen and (max-width: 768px) and (max-width: 480px) {
     .burger__img {
-      width: 50%; } }
+      min-width: 25rem; } }
 
 .burger__ingredients {
   width: 5.625rem;
@@ -1667,12 +1663,22 @@ h5 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 768px) {
+    .burger__ingredients {
+      position: absolute;
+      top: 0;
+      left: 0; } }
 
 .kkal__number {
   width: 3.75rem;
   height: 6.125rem;
   text-align: center;
   opacity: .5; }
+  @media screen and (max-width: 768px) {
+    .kkal__number {
+      position: absolute;
+      top: 0;
+      right: 0; } }
 
 .value-kkal {
   position: relative;

@@ -6,15 +6,12 @@
 .slider__container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
     height: 100%;
-    margin: 0 auto;    
+          
 }
 .slider {
     display: flex;
-    position: relative;
-    min-width: 60.75rem;
+    justify-content: center;
     margin: 0 2rem;
     overflow: hidden;
     color: $white;
@@ -32,10 +29,10 @@
     top: 50%;
 }
 .arrow__left {
-    left: 7%;
+    left: 0;
 }
 .arrow__right {
-    right: 7%;
+    right: 0;
 } 
 .arrow-scroll__pic.left {
     transform: rotate(90deg);
@@ -58,12 +55,11 @@
     }   
 }
 .burger__pic {
-    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
     @include tablets {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-right:0;
+        position: relative;
+        align-items: center;
     }
 }
 .burger__desc {
@@ -91,9 +87,10 @@
 .burger__img {
     min-width: 28.125rem;
     @include tablets {
+        padding-top: 5rem;
         width: 70%;
         @include phones {
-            width: 50%;
+            min-width: 25rem;;
         }
     }
 }
@@ -108,12 +105,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include tablets {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 .kkal__number {
     width: 3.75rem;
     height: 6.125rem;
     text-align: center;
     opacity: .5;
+    @include tablets {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
 .value-kkal {
     position: relative;
