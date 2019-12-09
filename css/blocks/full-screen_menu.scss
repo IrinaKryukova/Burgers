@@ -17,9 +17,8 @@
 		display: flex;
 	}*/
 
-	&_visible {
-		display: flex;
-		opacity: 1;
+	&_active {
+		display: flex;		
 	}
 	.nav__list {		
 		display: flex;
@@ -47,8 +46,8 @@
 		
 .menu__logo {
 	position: absolute;
-	top: 0.625rem;
-	left: 1.875rem;
+	top: 1rem;
+	left: 1rem;
 }
 
 .menu__close {

@@ -44,7 +44,7 @@
                     </nav> 
                     <div class="btn">
                         <a href="#" class="btn__order">Заказать</a>
-                        <a href="#" class="hamburger-menu__link" href="">
+                        <a href="#" class="hamburger-menu__link" id="hamburger-menu">
                             <div class="hamburger-menu__bars"></div>
                         </a>
                     </div>  
@@ -570,7 +570,7 @@
                      
             </div>
         </footer>
-        <div class="full-screen__menu" id="hamburger-menu">
+        <div class="full-screen__menu" id="modal">
             <div class="menu__logo"><img src="main_img/logo.png" class="logo__img" alt="Mr_Burger"></div>
             <div class="menu__items">
               <nav class="nav nav_hamburger">
@@ -595,12 +595,12 @@
                   </li>
                 </ul>
               </nav>
-            </div><a class="menu__close" href="#">
+            </div><a class="menu__close" id="menu_close" href="#">
               <svg class="menu__close-icon">
                 <use xlink:href="./sprite.svg#close"></use>
               </svg></a>
           </div>
     </div>
-    
+    <script src="main.js"></script>
 </body>
 </html>

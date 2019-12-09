@@ -20,6 +20,11 @@ body {
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
 }
+
+.body_closed{
+    height: 100vh;
+    overflow: hidden;
+}
 header {
     position: absolute;
     width: 100%;
