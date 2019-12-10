@@ -570,7 +570,7 @@ img, embed, object, video {
 .nav-scroll__link:hover {
   border-color: #fff; }
 
-.btn__order {
+.button__order {
   font-family: 'Ubuntu', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -587,10 +587,10 @@ img, embed, object, video {
   -o-transition: .3s;
   transition: .3s; }
 
-.btn__order:hover {
+.button__order:hover {
   background: #c1401e; }
 
-.btn__more {
+.button__more {
   font-family: 'Ubuntu', sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
@@ -606,10 +606,10 @@ img, embed, object, video {
   -o-transition: .3s;
   transition: .3s; }
   @media screen and (max-width: 480px) {
-    .btn__more {
+    .button__more {
       content: "Читать отзыв"; } }
 
-.btn__more:hover {
+.button__more:hover {
   background: #1f2122;
   border: 1px solid #1f2122; }
 
@@ -1546,7 +1546,10 @@ h5 {
 
 .arrow__left, .arrow__right {
   position: absolute;
-  top: 50%; }
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 .arrow__left {
   left: 0; }
@@ -1645,6 +1648,7 @@ h5 {
       min-width: 25rem; } }
 
 .burger__ingredients {
+  position: relative;
   width: 5.625rem;
   height: 5.625rem;
   background-color: #e35028;
@@ -1717,6 +1721,82 @@ h5 {
 
 .currency {
   font-size: 1.875rem; }
+
+.ingred {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 19.875rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 5.625rem;
+  list-style-type: none; }
+
+.burger__ingredients:hover .ingred {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.ingred__name, .ingred__weight {
+  color: #2f3234; }
+
+.ingred__weight {
+  width: 60%;
+  text-align: end; }
+
+.ingred__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1.25rem; }
+
+.ingred__item svg {
+  width: 45px;
+  margin-right: 23px; }
+
+.icon-beef {
+  width: 2.75rem;
+  height: 2.4375rem;
+  fill: #e35028; }
+
+.icon-buns {
+  width: 3rem;
+  height: 1.875rem;
+  fill: #f9b43b; }
+
+.icon-salad {
+  width: 2.375rem;
+  height: 2.375rem;
+  fill: #8BC03F; }
+
+.icon-sauce {
+  width: 2.5625rem;
+  height: 2.6875rem;
+  fill: #c1401e; }
+
+.icon-cucumber {
+  width: 2.6875rem;
+  height: 2.3125rem;
+  fill: #8BC03F; }
+
+.icon-cheese {
+  width: 2.4375rem;
+  height: 2.125rem;
+  fill: #f9b43b; }
 
 .nav_hamburger {
   display: -webkit-box;

@@ -1,4 +1,4 @@
-.btn__order {    
+.button__order {    
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.8125rem;
     font-weight: 500;
@@ -13,10 +13,10 @@
     cursor: pointer;
     transition: .3s;
 }
-.btn__order:hover {
+.button__order:hover {
     background: $red;
 }
-.btn__more {
+.button__more {
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
@@ -33,7 +33,7 @@
         content: "Читать отзыв";
     }
 }
-.btn__more:hover {
+.button__more:hover {
     background: $black;
     border: 1px solid $black;
 }

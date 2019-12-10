@@ -27,6 +27,7 @@
 .arrow__left, .arrow__right {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
 }
 .arrow__left {
     left: 0;
@@ -96,6 +97,7 @@
 }
 
 .burger__ingredients {
+    position: relative;
     width: 5.625rem;
     height: 5.625rem;
     background-color: $orange;
@@ -155,6 +157,68 @@
 .currency {
     font-size: 1.875rem;
 }
-.burger__price a {
-    
+.ingred {
+    display: none;
+    flex-direction: column;
+    min-width: 19.875rem;
+    padding: 1rem;
+    background-color: $white;
+    border-radius: 4px;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 5.625rem;
+    list-style-type: none;
+}
+.burger__ingredients:hover .ingred {
+    display: flex;
+}
+.ingred__name, .ingred__weight {
+    color: $grey;
+}
+.ingred__weight {
+    width: 60%;
+    text-align: end;
+}
+.ingred__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.ingred__item svg {
+    width: 45px;
+    margin-right: 23px;
+}
+.icon-beef {
+    width: 2.75rem;
+    height: 2.4375rem;
+    fill: $orange;
+}
+.icon-buns {
+    width: 3rem;
+    height: 1.875rem;
+    fill: $yellow;
+}
+.icon-salad {
+    width: 2.375rem;
+    height: 2.375rem;
+    fill: $green;
+}
+.icon-sauce {
+    width: 2.5625rem;
+    height: 2.6875rem;
+    fill: $red;
+}
+.icon-cucumber {
+    width: 2.6875rem;
+    height: 2.3125rem;
+    fill: $green;
+}
+.icon-cheese {
+    width: 2.4375rem;
+    height: 2.125rem;
+    fill: $yellow;
 }
