@@ -570,48 +570,36 @@ img, embed, object, video {
 .nav-scroll__link:hover {
   border-color: #fff; }
 
-.button__order {
+.button {
   font-family: 'Ubuntu', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0.5625rem 15px;
-  padding: 0.625rem 0.9375rem;
-  border: 0;
+  padding: 0.5625rem 1rem;
+  border: none;
   border-radius: 0.25rem;
-  background: #e35028;
   color: #fff;
   cursor: pointer;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s; }
+
+.button__order {
+  background: #e35028; }
 
 .button__order:hover {
   background: #c1401e; }
 
 .button__more {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 0.625rem 0.5625rem;
-  border: 1px solid #1f2122;
-  border-radius: 0.25rem;
-  background: #2f3234;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s; }
+  background: #2f3234; }
   @media screen and (max-width: 480px) {
     .button__more {
       content: "Читать отзыв"; } }
 
 .button__more:hover {
   background: #1f2122;
-  border: 1px solid #1f2122; }
+  border: none; }
 
 h1, h2, h3, h4, h5, p {
   margin: 0; }
@@ -861,10 +849,10 @@ h5 {
       width: 50%; } }
 
 .review__item:hover .review__hover {
-  opacity: .8;
-  -webkit-transition: opacity .4s;
-  -o-transition: opacity .4s;
-  transition: opacity .4s; }
+  opacity: .7;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s; }
 
 .review__avatar {
   width: 100%;
@@ -884,9 +872,9 @@ h5 {
   right: 0;
   background-color: #2f3234;
   padding: 2.9375rem 1.1875rem;
-  -webkit-transition: opacity .4s;
-  -o-transition: opacity .4s;
-  transition: opacity .4s; }
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s; }
   @media screen and (max-width: 768px) {
     .review__hover {
       padding: 0 10%;
