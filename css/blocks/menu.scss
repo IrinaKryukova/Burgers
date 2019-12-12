@@ -57,29 +57,22 @@
     transform: rotate(-90deg) translateY(-50%);
     transform-origin: 0 0; 
 }
+
+.menu-acco__item--active .menu-acco__trigger-text {
+    color: $yellow;
+}
 .menu-acco__content{
     width: 0;
     overflow: hidden;    
 }
 
-.menu-acco__item--active .menu-acco__content,
-.menu-acco__item:hover .menu-acco__content{
+.menu-acco__item--active .menu-acco__content{
     width: 100%;
     background: $grey;
     padding: 1rem;
     overflow: visible;
 }
-/*.menu-acco__content-text--active{
-    position: absolute;
-    top: 0;
-    right: -100px;
-    bottom: 0;
-    left: 0;
-    padding: 10px;    
-    background-color: $grey;
-    z-index: 20;
-  }*/
 
-  .menu-acco__content p {
+.menu-acco__content p {
       color: $white;
 }

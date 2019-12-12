@@ -1113,27 +1113,19 @@ h5 {
   -ms-transform-origin: 0 0;
   transform-origin: 0 0; }
 
+.menu-acco__item--active .menu-acco__trigger-text {
+  color: #f9b43b; }
+
 .menu-acco__content {
   width: 0;
   overflow: hidden; }
 
-.menu-acco__item--active .menu-acco__content,
-.menu-acco__item:hover .menu-acco__content {
+.menu-acco__item--active .menu-acco__content {
   width: 100%;
   background: #2f3234;
   padding: 1rem;
   overflow: visible; }
 
-/*.menu-acco__content-text--active{
-    position: absolute;
-    top: 0;
-    right: -100px;
-    bottom: 0;
-    left: 0;
-    padding: 10px;    
-    background-color: $grey;
-    z-index: 20;
-  }*/
 .menu-acco__content p {
   color: #fff; }
 
@@ -1506,29 +1498,30 @@ h5 {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%; }
 
 .slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   margin: 0 2rem;
   overflow: hidden;
-  color: #fff; }
+  color: #fff;
+  max-width: 50rem; }
+  @media screen and (max-width: 768px) {
+    .slider {
+      max-width: 33rem; } }
+  @media screen and (max-width: 480px) {
+    .slider {
+      max-width: 29rem; } }
 
 .slider__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   position: relative;
   will-change: right; }
 
@@ -1567,7 +1560,7 @@ h5 {
   justify-content: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  max-width: 61.75rem;
+  margin: 0 2rem;
   height: 100%; }
   @media screen and (max-width: 768px) {
     .burger__item {
@@ -1575,8 +1568,6 @@ h5 {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin: 9rem 2rem;
-      padding: 5rem;
       width: 100%; } }
 
 .burger__pic {
@@ -1626,7 +1617,9 @@ h5 {
   position: relative; }
 
 .burger__img {
-  min-width: 28.125rem; }
+  min-width: 28.125rem;
+  -o-object-fit: cover;
+  object-fit: cover; }
   @media screen and (max-width: 768px) {
     .burger__img {
       padding-top: 5rem;
@@ -1725,6 +1718,9 @@ h5 {
   left: 0;
   margin-left: 5.625rem;
   list-style-type: none; }
+  @media screen and (max-width: 480px) {
+    .ingred {
+      min-width: 15rem; } }
 
 .burger__ingredients:hover {
   background-color: #c1401e; }

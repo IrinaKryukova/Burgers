@@ -6,21 +6,26 @@
 .slider__container {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100%;
           
 }
 .slider {
-    display: flex;
-    justify-content: center;
+    display: flex;    
     margin: 0 2rem;
     overflow: hidden;
     color: $white;
+    max-width: 50rem;
+    @include tablets {
+        max-width: 33rem;
+    }
+    @include phones {
+        max-width: 29rem;
+    }
 }
 
 .slider__items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;    
     position: relative;    
     will-change: right;
 }
@@ -46,12 +51,10 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    max-width: 61.75rem;
+    margin: 0 2rem;
     height: 100%; 
     @include tablets {
-        flex-direction: column;
-        margin: 9rem 2rem;
-        padding: 5rem;
+        flex-direction: column;        
         width: 100%;
     }   
 }
@@ -87,6 +90,7 @@
 }
 .burger__img {
     min-width: 28.125rem;
+    object-fit: cover;
     @include tablets {
         padding-top: 5rem;
         width: 70%;
@@ -171,6 +175,9 @@
     left: 0;
     margin-left: 5.625rem;
     list-style-type: none;
+    @include phones {
+        min-width: 15rem;
+    }
 }
 .burger__ingredients:hover {
     background-color: $red;
