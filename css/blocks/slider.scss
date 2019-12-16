@@ -12,15 +12,16 @@
 }
 .slider {
     display: flex;    
-    margin: 0 2rem;
+    margin: 0 1rem;
     overflow: hidden;
     color: $white;
     max-width: 50rem;
     @include tablets {
-        max-width: 33rem;
+        max-width: 31rem;
     }
     @include phones {
-        max-width: 29rem;
+        margin: 0;
+        max-width: 28rem;
     }
 }
 
@@ -51,7 +52,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 0 2rem;
+    margin: 0 1rem;
     height: 100%; 
     @include tablets {
         flex-direction: column;        
@@ -88,13 +89,22 @@
     height: 3.75rem;    
     position: relative;
 }
+
+.burger__wrapper {
+    width: 28.125rem;
+    height: 18.75rem;
+    @include tablets {
+        height: 21rem;
+    }
+}
 .burger__img {
+    width: 100%;
+    height: 100%;
     min-width: 28.125rem;
-    object-fit: cover;
     @include tablets {
         padding-top: 5rem;
         width: 70%;
-        @include phones {
+    @include phones {
             min-width: 25rem;;
         }
     }
@@ -117,7 +127,6 @@
     }
 }
 
-
 .kkal__number {
     width: 3.75rem;
     height: 6.125rem;
@@ -126,7 +135,10 @@
     @include tablets {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10%;
+    }
+    @include phones {
+        right: 15%;
     }
 }
 .value-kkal {

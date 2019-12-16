@@ -62,13 +62,14 @@ for (var item = 0; item<membersList.length; item++) {
 
     member.addEventListener('click', function (e){
 
+        member.classList.add('member__item_active');
 
-    member.classList.add('member__item_active');
-
-}) 
+    }) 
+    console.log(member);
 
     if (member.classList.contains('member__item_active')){
 
+        console.log(member);
         member.addEventListener('click', function (e){
 
         member.classList.remove('member__item_active');
@@ -147,11 +148,38 @@ function loop(direction, e) {
   }
 }
 
+/*const minRight = 0;
+const maxRight = 200;
+const step = 50;
+let currentRight = 0;
 
+items.style.right = currentRight;
+
+right.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (currentRight < maxRight) {
+    currentRight += step;
+    items.style.right = currentRight + "rem";
+  }
+});
+
+left.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (currentRight > minRight) {
+    currentRight -= step;
+    items.style.right = currentRight + "rem";
+  }
+});*/
 //orderForm functional
 
 const myForm = document.querySelector('#myForm');
+
 let form = new FormData;
+
+const success = document.querySelector('#success');
+
+const modalError = document.querySelector('#error') ;
+
 
 myForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -176,15 +204,20 @@ myForm.addEventListener('submit', function(event) {
         function processReqChange() {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
+
+                    success.classList.add('modal__success_active');
+                    console.log(JSON.parse(xhr.response));
                     // удачно
-                    console.log(JSON.parse(xhr.response))
                     
+
                 } else {
-                   // ошибка
+
+                    modalError.classList.add('modal__error_active');
+                    // ошибка                   
                 }
             }
         }
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
         xhr.send(form);          
         
     }

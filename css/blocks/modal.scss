@@ -1,4 +1,4 @@
-.modal {
+.modal__success {
     position: fixed;
     top: 0;
 	left: 0;
@@ -16,6 +16,26 @@
 	}
 
 }
+
+.modal__error {
+    position: fixed;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    background: $grey;
+    opacity: .9;	
+	z-index: 60;    
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &_active {
+		display: flex;		
+	}
+
+}
+
 .modal__content {
     width: 12.25rem;
     height: 6.625rem;
