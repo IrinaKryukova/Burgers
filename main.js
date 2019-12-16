@@ -21,10 +21,9 @@ menuClose.addEventListener('click', function () {
 
 });
 
+
 //fullReview__modal
 const moreButton = document.querySelectorAll('button.button__more');
-
-console.log(moreButton);
 
 const fullReview = document.getElementById('fullReview__modal');
 
@@ -49,15 +48,40 @@ fullReviewClose.addEventListener('click', function (e) {
 
 });
 
-//аккордеон меню (горизонтальный)
+//accordeon team 
+
+const membersList = document.querySelectorAll('li.member__item');
+
+console.log(membersList);
+
+const member = membersList[item];
+
+for (var item = 0; item<membersList.length; item++) {
+
+    const member = membersList[item];    
+
+    member.addEventListener('click', function (e){
+
+
+    member.classList.add('member__item_active');
+
+}) 
+
+    if (member.classList.contains('member__item_active')){
+
+        member.addEventListener('click', function (e){
+
+        member.classList.remove('member__item_active');
+        })
+    }
+
+}
+    
+//accordeon menu 
 
 const accord1 = document.getElementsByClassName("menu-acco__item");
 
-console.log(accord1);
-
 var width = document.documentElement.clientWidth;
-
-console.log(width);
 
 window.addEventListener('resize', function (e) {
     width = document.documentElement.clientWidth;
@@ -81,7 +105,7 @@ for (var index = 0; index < accord1.length; index++) {
             element.classList.remove('menu-acco__item--active');
 
         } else {
-            //console.log('add');
+            
             element.classList.add('menu-acco__item--active');
         }
         
@@ -100,13 +124,13 @@ for (var index = 0; index < accord1.length; index++) {
 
 //slider
 const left = document.querySelector("#left");
-console.log(left);
+
 const right = document.querySelector("#right");
-console.log(right);
+
 const items = document.querySelector("#items");
-console.log(items);
+
 right.addEventListener('click', function(e) {
-    console.log("сработало");
+    
     loop("right", e);
 });
  
@@ -127,18 +151,12 @@ function loop(direction, e) {
 //orderForm functional
 
 const myForm = document.querySelector('#myForm');
-const orderButton = document.querySelector('#orderButton')
+let form = new FormData;
 
-orderButton.addEventListener('click', function(event) {
+myForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    //console.log(myForm.elements.name.value);
-    //console.log(myForm.elements.phone.value);
-    //console.log(myForm.elements.comment.value);  
-
-    
+        
     if (validateForm(myForm)) {
-
-       // data.append("to","my@mail.com");
 
         const data = {
             name: myForm.elements.name.value,            
@@ -147,13 +165,27 @@ orderButton.addEventListener('click', function(event) {
             to: 'my@mail.com'
         };
 
-        console.log(data);
+        for (const key in data) {
+            form.append(key, data[key]);
+        }
 
         const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = processReqChange;
+
+        function processReqChange() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    // удачно
+                    console.log(JSON.parse(xhr.response))
+                    
+                } else {
+                   // ошибка
+                }
+            }
+        }
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-        xhr.send(JSON.stringify(data));
-        
-       
+        xhr.send(form);          
         
     }
 

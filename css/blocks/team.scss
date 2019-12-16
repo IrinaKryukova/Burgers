@@ -48,9 +48,7 @@
 		font-size: 1.5625rem; 
 	}
 }
-.member__name:hover {
-    color: $yellow;
-}
+
 .member__name:before {
     content: "";
     display: inline-flex;
@@ -60,7 +58,11 @@
     border-top: 0.4375rem solid $yellow;
     transition: .3s;
 }
-.member__name:hover.member__name:before {
+
+.member__item_active .member__name {
+    color: $yellow;
+}
+.member__item_active .member__name:before {
     transform: rotate(180deg);
 }
 .member__desc {
@@ -75,7 +77,7 @@
 		align-items: center;	
 	}
 }
-.member__item:hover .member__desc {
+.member__item_active .member__desc {
     overflow: visible;
     height: 6.25rem;
     @include tablets {

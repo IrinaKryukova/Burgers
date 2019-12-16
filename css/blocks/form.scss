@@ -9,7 +9,7 @@
 .order__title {
     margin-bottom: 1.625rem;
     color: $yellow; 
-    @include phones {
+    @include tablets {
         text-align: center;
     }
 }

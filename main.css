@@ -386,7 +386,7 @@ header {
   overflow: hidden; }
   @media screen and (max-width: 768px) {
     .section {
-      min-height: 50rem; } }
+      min-height: 57rem; } }
   @media screen and (max-width: 480px) {
     .section {
       min-height: 55rem; } }
@@ -1036,9 +1036,6 @@ h5 {
   .member__name {
     font-size: 1.5625rem; } }
 
-.member__name:hover {
-  color: #f9b43b; }
-
 .member__name:before {
   content: "";
   display: -webkit-inline-box;
@@ -1052,7 +1049,10 @@ h5 {
   -o-transition: .3s;
   transition: .3s; }
 
-.member__name:hover.member__name:before {
+.member__item_active .member__name {
+  color: #f9b43b; }
+
+.member__item_active .member__name:before {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
@@ -1079,11 +1079,11 @@ h5 {
       -ms-flex-align: center;
       align-items: center; } }
 
-.member__item:hover .member__desc {
+.member__item_active .member__desc {
   overflow: visible;
   height: 6.25rem; }
   @media screen and (max-width: 768px) {
-    .member__item:hover .member__desc {
+    .member__item_active .member__desc {
       height: 12.5rem; } }
 
 .member__content {
@@ -1338,7 +1338,7 @@ h5 {
 .order__title {
   margin-bottom: 1.625rem;
   color: #f9b43b; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     .order__title {
       text-align: center; } }
 
