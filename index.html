@@ -220,7 +220,6 @@
                                                         <div class="ingred__name">Сыр</div>
                                                         <div class="ingred__weight">80 г</div>
                                                     </li>
-
                                                 </ul>
                                             </div>
                                             <h5>Состав</h5>
@@ -658,7 +657,7 @@
                                         невозможно забыть... Никогда не думал, что булочки могут
                                         быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
                                     </p>
-                                    <button class="button button__more" type="button">Подробнее</button>
+                                    <button class="button button__more" id="moreButton" type="button">Подробнее</button>
                                 </div>
                             </li>
                             <li class="review__item">
@@ -752,40 +751,45 @@
                     <!--<div class="container">-->
                     <h2 class="order__title">Закажите доставку</h2>
                     <div class="order-form">
-                        <form action="" class="order-form__elem">
+                        <form action="" class="order-form__elem" id="myForm">
                             <div class="order-form__col">
                                 <div class="order-form__row">
                                     <label class="order-form__block">
                                         <div class="order-form__title">Имя</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="name" value="" required>
+                                        <div class="error"></div>
                                     </label>
                                     <label class="order-form__block">
                                         <div class="order-form__title">Телефон</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="phone" value="" required>
+                                        <div class="error"></div>
                                     </label>
                                 </div>
                                 <div class="order-form__row">
                                     <label class="order-form__block">
                                         <div class="order-form__title">Улица</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="street" value="" required>
+                                        <div class="error"></div>
                                     </label>
                                 </div>
                                 <div class="order-form__row">
                                     <label class="order-form__block">
                                         <div class="order-form__title">Дом</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="house" value="" required>
+                                        <div class="error"></div>
                                     </label>
                                     <label class="order-form__block">
                                         <div class="order-form__title">Корпус</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="case" value="" required>
+                                        <div class="error"></div>
                                     </label>
                                     <label class="order-form__block">
                                         <div class="order-form__title">Квартира</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="apartament" value="" required>
                                     </label>
                                     <label class="order-form__block order-form__block--last">
                                         <div class="order-form__title">Этаж</div>
-                                        <input type="text" class="order-form__input">
+                                        <input type="text" class="order-form__input" name="floor" value="" required>
                                     </label>
                                 </div>
                             </div>
@@ -794,7 +798,8 @@
                                     <label class="order-form__block">
                                         <div class="order-form__title">Комментарий</div>
                                         <textarea class="order-form__input order-form__input__textarea"
-                                            name="comment"></textarea>
+                                            name="comment" value="" required></textarea>
+                                            <div class="error"></div>
                                     </label>
                                 </div>
                                 <div class="order-form__buttons">
@@ -818,7 +823,7 @@
                                         </label>
                                     </div>
                                     <div class="order-form__row">
-                                        <input class="order-form__button button button__order" name="" type="submit"
+                                        <input class="order-form__button button button__order" id="orderButton" name="" type="submit"
                                             value="Заказать">
                                         <input class="order-form__button order-form__button__reset button button__more"
                                             name="" type="reset" value="Очистить">
@@ -914,6 +919,34 @@
                 <svg class="menu__close-icon">
                     <use xlink:href="./sprite.svg#close"></use>
                 </svg></a>
+        </div>
+        <div class="full-review__modal" id="fullReview__modal">
+            <div class="full-review__popup">
+                <a class="full-review__close" id="fullReviewClose" href="#">
+                    <svg class="full-review__close-icon">
+                        <use xlink:href="./sprite.svg#close"></use>
+                    </svg>
+                </a>
+                <div class="full-review__desc">
+                    <h5 class="full-review__name">Константин Спилберг</h5>
+                    <div class="full-review__content">
+                        Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
+                        что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли
+                        о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что
+                        булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="modal">
+            <div class="modal__content" id="success">
+                <p class="modal__text">Сообщение отправлено</p>
+                <button class="button button__close">Закрыть</button>
+            </div>
+            <div class="modal__content" id="error">
+                <p class="modal__text error-message">Произошла ошибка</p>
+                <button class="button button__close">Закрыть</button>
+            </div>              
         </div>
     </div>
     <script src="main.js"></script>
