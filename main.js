@@ -52,8 +52,6 @@ fullReviewClose.addEventListener('click', function (e) {
 
 const membersList = document.querySelectorAll('li.member__item');
 
-console.log(membersList);
-
 const member = membersList[item];
 
 for (var item = 0; item<membersList.length; item++) {
@@ -62,19 +60,22 @@ for (var item = 0; item<membersList.length; item++) {
 
     member.addEventListener('click', function (e){
 
-        member.classList.add('member__item_active');
+        for (let index = 0; index < membersList.length; index++) {
 
-    }) 
-    console.log(member);
+            if (membersList[index] !== member) {
+                membersList[index].classList.remove('member__item_active');
+            }
+            
+        }
 
-    if (member.classList.contains('member__item_active')){
+        if (member.classList.contains('member__item_active')){
+            
+            member.classList.remove('member__item_active');
+        } else {
+            member.classList.add('member__item_active');
+        }  
 
-        console.log(member);
-        member.addEventListener('click', function (e){
-
-        member.classList.remove('member__item_active');
-        })
-    }
+    });
 
 }
     
@@ -94,15 +95,14 @@ for (var index = 0; index < accord1.length; index++) {
     
     element.addEventListener('click', function (e) {
         e.preventDefault();
-
         for (var i = 0; i < accord1.length; i++) {
-            if (i !== index) {
+            if (element !== accord1[i]) {
                 accord1[i].classList.remove('menu-acco__item--active');
             }
             
         }
         
-        if (element.classList.contains('menu-acco__item--active')) {            
+        if (element.classList.contains('menu-acco__item--active')) {
             element.classList.remove('menu-acco__item--active');
 
         } else {
@@ -111,7 +111,7 @@ for (var index = 0; index < accord1.length; index++) {
         }
         
 
-        if (width < 650) {
+        if (width < 450) {
             let currElem = index + 1;
             let count = lines.length - currElem;
             let overWidth = 80 * count;
@@ -122,7 +122,7 @@ for (var index = 0; index < accord1.length; index++) {
     })    
 }
 
-
+    
 //slider
 const left = document.querySelector("#left");
 
@@ -148,28 +148,6 @@ function loop(direction, e) {
   }
 }
 
-/*const minRight = 0;
-const maxRight = 200;
-const step = 50;
-let currentRight = 0;
-
-items.style.right = currentRight;
-
-right.addEventListener("click", function(e) {
-  e.preventDefault();
-  if (currentRight < maxRight) {
-    currentRight += step;
-    items.style.right = currentRight + "rem";
-  }
-});
-
-left.addEventListener("click", function(e) {
-  e.preventDefault();
-  if (currentRight > minRight) {
-    currentRight -= step;
-    items.style.right = currentRight + "rem";
-  }
-});*/
 //orderForm functional
 
 const myForm = document.querySelector('#myForm');
@@ -178,8 +156,7 @@ let form = new FormData;
 
 const success = document.querySelector('#success');
 
-const modalError = document.querySelector('#error') ;
-
+const modalError = document.querySelector('#error');
 
 myForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -203,13 +180,13 @@ myForm.addEventListener('submit', function(event) {
 
         function processReqChange() {
             if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
+                if (xhr.status == 200 && xhr.response.status) {
 
                     success.classList.add('modal__success_active');
-                    console.log(JSON.parse(xhr.response));
-                    // удачно
-                    
-
+                    console.log(xhr.response);
+                    // удачно 
+                  
+                   
                 } else {
 
                     modalError.classList.add('modal__error_active');
@@ -217,11 +194,11 @@ myForm.addEventListener('submit', function(event) {
                 }
             }
         }
+        xhr.responseType = 'json';
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
         xhr.send(form);          
         
     }
-
 
     //if (myForm.elements.callback.checked == true) {
         //console.log('не перезванивать');
@@ -259,3 +236,22 @@ myForm.addEventListener('submit', function(event) {
         }
     }
 })
+
+const closeSuccess = document.getElementById('closeSuccess');
+
+const closeError = document.getElementById('closeError');
+
+closeSuccess.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    success.classList.remove('modal__success_active');
+    
+});
+
+
+closeError.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    modalError.classList.remove('modal__error_active');
+    
+});

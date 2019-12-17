@@ -1190,7 +1190,7 @@ h5 {
   overflow: hidden; }
 
 .menu-acco__item--active .menu-acco__content {
-  width: 100%;
+  width: calc(100% - 5rem);
   background: #2f3234;
   padding: 1rem;
   overflow: visible; }
