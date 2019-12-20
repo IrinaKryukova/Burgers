@@ -11,23 +11,37 @@
           
 }
 .slider {
+    position: relative;  
     display: flex;    
-    margin: 0 1rem;
-    overflow: hidden;
     color: $white;
-    max-width: 50rem;
+    max-width: 54rem;
+    padding: 0 2rem;
     @include tablets {
-        max-width: 31rem;
+        max-width: 33rem;
     }
     @include phones {
         margin: 0;
+        padding: 0;
         max-width: 28rem;
     }
 }
 
-.slider__items {
-    display: flex;    
-    position: relative;    
+.slider__wrapper {
+    position: relative;
+    width: 350rem;
+    height: 31rem;
+    overflow: hidden;
+    @include tablets {
+        height: 47rem;
+    }
+}
+
+.slider__list { 
+    position: absolute;
+    top: 0;   
+    overflow: hidden;
+    display: flex; 
+    flex-direction: row;
     will-change: right;
 }
 .arrow__left, .arrow__right {
@@ -52,11 +66,14 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 0 1rem;
+    margin: 0 0.625rem;
     height: 100%; 
     @include tablets {
         flex-direction: column;        
         width: 100%;
+        @include phones {
+            margin: 0;
+        }
     }   
 }
 .burger__pic {
@@ -76,6 +93,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        @include phones {
+            max-width: 24rem;
+        }
     }
 }
 .icon-burger {

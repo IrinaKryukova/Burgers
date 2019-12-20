@@ -1,12 +1,60 @@
-//fullScreenMenu
+//slider jQuery
 
 $(document).ready(function() {
 
-    let ndx = $('.indexed').index('.review__item');
+    var moveSlide = function (container, slideNumber) {
+        var 
+            sliders = container.find('.burger__item'),
+            activeSlide = sliders.filter('.active'),
+            reqItem = sliders.eq(slideNumber),
+            reqIndex = reqItem.index(),
+            list = container.find('.slider__list'),
+            duration = 500;
 
-    console.log(ndx);
+        if (reqItem.length) {
+            list.animate({
+                'left' : -reqIndex*100 + '%'
+            }, duration, function () {
+                activeSlide.removeClass('active');
+                reqItem.addClass('active');
+            });
+        }     
+
+    }
+    
+    $('.slider__btn').on('click', function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            container = $this.closest('.slider'),
+            sliders = $('.burger__item', container),
+            activeItem = sliders.filter('.active'),
+            nextSlide = activeItem.next();
+            prevSlide = activeItem.prev();
+
+        if ($this.hasClass('arrow__right')) { //вперед
+
+            if (nextSlide.length) {
+                moveSlide(container,nextSlide.index());
+            } else {
+                moveSlide(container,sliders.first().index());
+            }
+        } 
+        
+        if ($this.hasClass('arrow__left')) { //назад
+
+            if (prevSlide.length) {
+                moveSlide(container,prevSlide.index());
+            } else {
+                moveSlide(container,sliders.last().index());
+            }             
+        }       
+
+    })
 
 });
+
+//fullScreenMenu
 
 const menuButton = document.getElementById('hamburger-menu');
 
@@ -133,29 +181,29 @@ for (var index = 0; index < accord1.length; index++) {
 
     
 //slider
-const left = document.querySelector("#left");
+//const left = document.querySelector("#left");
 
-const right = document.querySelector("#right");
+//const right = document.querySelector("#right");
 
-const items = document.querySelector("#items");
+//const items = document.querySelector("#items");
 
-right.addEventListener('click', function(e) {
+//right.addEventListener('click', function(e) {
     
-    loop("right", e);
-});
+//    loop("right", e);
+//});
  
-left.addEventListener('click', function(e) {
-    loop("left", e);
-});
+//left.addEventListener('click', function(e) {
+//    loop("left", e);
+//});
 
-function loop(direction, e) {
-    e.preventDefault();
-    if (direction === "right") {
-        items.appendChild(items.firstElementChild);
-    } else {
-        items.insertBefore(items.lastElementChild, items.firstElementChild);
-  }
-}
+//function loop(direction, e) {
+//    e.preventDefault();
+//    if (direction === "right") {
+//        items.appendChild(items.firstElementChild);
+//    } else {
+//        items.insertBefore(items.lastElementChild, items.firstElementChild);
+//  }
+//}
 
 //orderForm functional
 
