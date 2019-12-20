@@ -19,7 +19,7 @@
     background: $red;
 }
 .button__more {
-    background: $grey;
+    background: $black;
     @include phones {
         content: "Читать отзыв";
     }

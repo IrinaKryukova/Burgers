@@ -592,7 +592,7 @@ img, embed, object, video {
   background: #c1401e; }
 
 .button__more {
-  background: #2f3234; }
+  background: #1f2122; }
   @media screen and (max-width: 480px) {
     .button__more {
       content: "Читать отзыв"; } }
@@ -896,6 +896,9 @@ h5 {
 .review__name {
   margin-bottom: 1.0625rem;
   color: #fff; }
+  @media screen and (max-width: 480px) {
+    .review__name {
+      font-size: 1.5rem; } }
 
 .review__text {
   line-height: 1.5rem;
@@ -2021,5 +2024,49 @@ h5 {
 
 .error-message {
   color: #c1401e; }
+
+.how-work {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url(../../how_work_img/how_work_bg.png) center center/cover no-repeat;
+  padding: 4.375rem; }
+  @media screen and (max-width: 480px) {
+    .how-work {
+      padding: 3rem 1rem; } }
+
+.how-work__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.how-work__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  margin-bottom: 0.875rem;
+  color: #2f3234; }
+  @media screen and (max-width: 480px) {
+    .how-work__title {
+      font-size: 4rem; } }
+
+video.how-work__video {
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

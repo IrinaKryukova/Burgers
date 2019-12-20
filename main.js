@@ -1,4 +1,13 @@
 //fullScreenMenu
+
+$(document).ready(function() {
+
+    let ndx = $('.indexed').index('.review__item');
+
+    console.log(ndx);
+
+});
+
 const menuButton = document.getElementById('hamburger-menu');
 
 const fullScreenMenu = document.getElementById('modal');
