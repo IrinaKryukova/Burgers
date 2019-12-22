@@ -34,7 +34,7 @@ header {
 .wrapper {
     position: relative;
     overflow: hidden;
-    min-height: 100%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -42,24 +42,24 @@ header {
 .container {
     margin: 0 auto;
     position: relative;
-    /*max-width: 68.75rem;
-    width: 95%;*/
     display: flex;
     flex-direction: row;   
 }
 .section {
     position: relative;
-    height: 100vh;
+    height: 100%;
     min-height: 40.625rem;
     overflow: hidden;
     @include tablets {
-        min-height: 57rem; 
+        min-height: initial; 
     }
     @include phones {
         min-height: 55rem; 
     }
 }
 .page-content__container {
+    height: 100%;
+    transition: transform 1s;
     position: relative;
     display: flex;
     flex-direction: column;

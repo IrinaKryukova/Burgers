@@ -1,4 +1,4 @@
-//slider jQuery
+//slider jQuery animate
 
 $(document).ready(function() {
 
@@ -53,6 +53,8 @@ $(document).ready(function() {
     })
 
 });
+
+
 
 //fullScreenMenu
 
