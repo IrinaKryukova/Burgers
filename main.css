@@ -1597,7 +1597,7 @@ h5 {
   padding: 0 2rem; }
   @media screen and (max-width: 768px) {
     .slider {
-      max-width: 33rem; } }
+      max-width: 33.5rem; } }
   @media screen and (max-width: 480px) {
     .slider {
       margin: 0;

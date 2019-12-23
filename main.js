@@ -6,13 +6,21 @@ $(document).ready(function() {
     let inScroll = false;
 
     const mobileDetect = new MobileDetect(window.navigator.userAgent);
-    console.log(mobileDetect);
-
     const isMobile = mobileDetect.mobile();
 
+    const changeNavScrollActiveItem = () => {
+        $('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active');
+    
+    }
+
     const performTransition = sectionEq => {
-        if (inScroll === false) {
+        if (inScroll) return;
+
             inScroll = true;
+
+            const transitionIsOver = 1000;
+            const mouseInvertionIsOver = 300;
+
             const position = sectionEq * -100;
 
             sections.eq(sectionEq).addClass('active').siblings().removeClass('active');
@@ -23,12 +31,13 @@ $(document).ready(function() {
 
             setTimeout(() => {
                 inScroll = false;
-
-                //$('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active')
-            });
+                changeNavScrollActiveItem();
+            
+            }, transitionIsOver + mouseInvertionIsOver);
+              
         }   
-    }
-
+    
+//touchmove, touchstart, touchend
     const scrollViewport = direction => {
         const activeSection = sections.filter('.active');
         const nextSection = activeSection.next();        
@@ -64,7 +73,7 @@ $(document).ready(function() {
             case 38:
                 scrollViewport("prev");
             break;
-        }
+            }
         }
     });
 
@@ -74,24 +83,22 @@ $(document).ready(function() {
       });
       
       // разрешаем свайп на мобильниках
-      if (isMobile) {
-        window.addEventListener(
-          "touchmove",
-          e => {
-            e.preventDefault();
+    if (isMobile) {
+        window.addEventListener("touchmove", e => {
+                e.preventDefault();
           },
           { passive: false }
         );
       
         $("body").swipe({
-          swipe: (event, direction) => {
-            let scrollDirecrion;
-            if (direction === "up") scrollDirecrion = "next";
-            if (direction === "down") scrollDirecrion = "prev";
-            scrollViewport(scrollDirecrion);
-          }
+            swipe: (event, direction) => {
+                let scrollDirecrion;
+                if (direction === "up") scrollDirecrion = "next";
+                if (direction === "down") scrollDirecrion = "prev";
+                scrollViewport(scrollDirecrion);
+            }
         });
-      }
+    }
 
 })
 
@@ -361,40 +368,36 @@ closeError.addEventListener('click', function (e) {
 //api-maps:yandex.ru
 
 var myMap;
-        var geoCenter = false;
+var geoCenter = false;
         
-        function init() {
-            var map = new ymaps.Map('map', {
-                center: [59.94, 30.32],
-                zoom: 12,
-                controls: ['zoomControl'],
-                behaviors: ['drag']
-            });
+function init() {
+    var myMap = new ymaps.Map('map', {
+        center: [59.94, 30.32],
+        zoom: 12,
+        controls: ['zoomControl'],
+        behaviors: ['drag']
+    });
 
-            let coords = [
-            [55.80, 37.30],
-            [55.80, 37.40],
-            [55.70, 37.30],
-            [55.70, 37.40]
-        ];
-        for (let index = 0; index < coords.length; index++) {
-            const coord = coords[index];
-            let tempLink = '<span>'+'точка на карте' + (index + 1) * 1 +'<span>'
-            let tempText = '<p>'+'точка на карте'+'</p>'
-            let tempHeader = '<h3><span style="color: black">'+'точка на карте'+'</span></h3>'
-            let baloon = tempHeader + tempText + tempLink;
+    let coords = [
+        [59.97, 30.31],
+        [59.94, 30.25],
+        [59.93, 30.34],
+        [59.92, 30.30]
+    ];
+    for (let index = 0; index < coords.length; index++) {
+        const coord = coords[index];
+        let tempLink = '<span>'+'Точка ' + (index + 1) * 1 +'<span>'
+        let tempText = '<p>'+'Самые вкусные бургеры у нас'+'</p>'
+        let tempHeader = '<h5><span style="color: orange">'+'Натуральные бургеры'+'</span></h5>'
+        let baloon = tempHeader + tempText + tempLink;
 
-            myMap.geoObjects.add(new ymaps.Placemark(coord, {balloonContent: baloon}, 
-                {iconContent: index + 1,
-                iconLayout: 'default#image', 
-                iconImageHref:'map_img/map-marker.svg',  
-                iconImageSize:[37, 42],}));
-            
-            
-        }
-            myMap.setBounds(myMap.geoObjects.getBounds());
-            myMap.setZoom(myMap.getZoom()-1.4);
+        myMap.geoObjects.add(new ymaps.Placemark(coord, {balloonContent: baloon}, {iconContent: index + 1,iconLayout: 'default#image', iconImageHref:'map_img/map-marker.svg',  iconImageSize:[37, 42],}));
+    
+           
+    }
+    myMap.setBounds(myMap.geoObjects.getBounds());
+    myMap.setZoom(myMap.getZoom()-1.4);
 
-        };
+};
         
-        ymaps.ready(init);
+ymaps.ready(init);
