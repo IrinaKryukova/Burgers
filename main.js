@@ -1,3 +1,100 @@
+//One Page Scroll
+$(document).ready(function() {
+
+    const sections = $('.section');    
+    const display = $('.page-content');
+    let inScroll = false;
+
+    const mobileDetect = new MobileDetect(window.navigator.userAgent);
+    console.log(mobileDetect);
+
+    const isMobile = mobileDetect.mobile();
+
+    const performTransition = sectionEq => {
+        if (inScroll === false) {
+            inScroll = true;
+            const position = sectionEq * -100;
+
+            sections.eq(sectionEq).addClass('active').siblings().removeClass('active');
+    
+            display.css({
+                transform: `translateY(${position}%)`
+            })
+
+            setTimeout(() => {
+                inScroll = false;
+
+                //$('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active')
+            });
+        }   
+    }
+
+    const scrollViewport = direction => {
+        const activeSection = sections.filter('.active');
+        const nextSection = activeSection.next();        
+        const prevSection = activeSection.prev();        
+
+        if (direction === 'next' && nextSection.length) {
+            performTransition(nextSection.index());
+        }
+
+        if (direction === 'prev' && prevSection.length) {
+            performTransition(prevSection.index());
+        }
+
+    }
+    
+    $(document).on({
+        wheel: e => {
+            const deltaY = e.originalEvent.deltaY;
+            const direction = deltaY > 0 ? "next" : "prev";
+            scrollViewport(direction);
+        },
+        keydown: e => {
+            const tagName = e.target.tagName.toLowerCase();
+            const userTypingInInputs = tagName === "input" || tagName === "textarea";
+      
+            if (userTypingInInputs) return;
+      
+            switch (e.keyCode) {
+                case 40:
+                    scrollViewport("next");
+                break;
+      
+            case 38:
+                scrollViewport("prev");
+            break;
+        }
+        }
+    });
+
+    $("[data-scroll-to]").on("click", e => {
+        e.preventDefault();
+        performTransition(parseInt($(e.currentTarget).attr("data-scroll-to")));
+      });
+      
+      // разрешаем свайп на мобильниках
+      if (isMobile) {
+        window.addEventListener(
+          "touchmove",
+          e => {
+            e.preventDefault();
+          },
+          { passive: false }
+        );
+      
+        $("body").swipe({
+          swipe: (event, direction) => {
+            let scrollDirecrion;
+            if (direction === "up") scrollDirecrion = "next";
+            if (direction === "down") scrollDirecrion = "prev";
+            scrollViewport(scrollDirecrion);
+          }
+        });
+      }
+
+})
+
 //slider jQuery animate
 
 $(document).ready(function() {
@@ -54,16 +151,11 @@ $(document).ready(function() {
 
 });
 
-
-
 //fullScreenMenu
 
 const menuButton = document.getElementById('hamburger-menu');
-
 const fullScreenMenu = document.getElementById('modal');
-
 const body = document.getElementById('body');
-
 const menuClose = document.getElementById('menu_close');
 
 menuButton.addEventListener('click', function () {
@@ -83,9 +175,7 @@ menuClose.addEventListener('click', function () {
 
 //fullReview__modal
 const moreButton = document.querySelectorAll('button.button__more');
-
 const fullReview = document.getElementById('fullReview__modal');
-
 const fullReviewClose = document.getElementById('fullReviewClose');
 
 for (var index = 0; index<moreButton.length; index++) {
@@ -114,7 +204,6 @@ const membersList = document.querySelectorAll('li.member__item');
 const member = membersList[item];
 
 for (var item = 0; item<membersList.length; item++) {
-
     const member = membersList[item];    
 
     member.addEventListener('click', function (e){
@@ -123,16 +212,14 @@ for (var item = 0; item<membersList.length; item++) {
 
             if (membersList[index] !== member) {
                 membersList[index].classList.remove('member__item_active');
-            }
-            
+            }            
         }
 
-        if (member.classList.contains('member__item_active')){
-            
+        if (member.classList.contains('member__item_active')){            
             member.classList.remove('member__item_active');
         } else {
             member.classList.add('member__item_active');
-        }  
+        }
 
     });
 
@@ -141,7 +228,6 @@ for (var item = 0; item<membersList.length; item++) {
 //accordeon menu 
 
 const accord1 = document.getElementsByClassName("menu-acco__item");
-
 var width = document.documentElement.clientWidth;
 
 window.addEventListener('resize', function (e) {
@@ -149,7 +235,6 @@ window.addEventListener('resize', function (e) {
 })
 
 for (var index = 0; index < accord1.length; index++) {
-
     const element = accord1[index];
     
     element.addEventListener('click', function (e) {
@@ -157,18 +242,15 @@ for (var index = 0; index < accord1.length; index++) {
         for (var i = 0; i < accord1.length; i++) {
             if (element !== accord1[i]) {
                 accord1[i].classList.remove('menu-acco__item--active');
-            }
-            
+            }            
         }
         
         if (element.classList.contains('menu-acco__item--active')) {
             element.classList.remove('menu-acco__item--active');
 
-        } else {
-            
+        } else {            
             element.classList.add('menu-acco__item--active');
-        }
-        
+        }        
 
         if (width < 450) {
             let currElem = index + 1;
@@ -176,45 +258,16 @@ for (var index = 0; index < accord1.length; index++) {
             let overWidth = 80 * count;
             let content = element.getElementsByClassName('menu-acco__content');
             content[0].style ='right: -' + overWidth+'px';
-        }       
-        
+        }      
+      
     })    
-}
-
-    
-//slider
-//const left = document.querySelector("#left");
-
-//const right = document.querySelector("#right");
-
-//const items = document.querySelector("#items");
-
-//right.addEventListener('click', function(e) {
-    
-//    loop("right", e);
-//});
- 
-//left.addEventListener('click', function(e) {
-//    loop("left", e);
-//});
-
-//function loop(direction, e) {
-//    e.preventDefault();
-//    if (direction === "right") {
-//        items.appendChild(items.firstElementChild);
-//    } else {
-//        items.insertBefore(items.lastElementChild, items.firstElementChild);
-//  }
-//}
+}    
 
 //orderForm functional
 
 const myForm = document.querySelector('#myForm');
-
 let form = new FormData;
-
 const success = document.querySelector('#success');
-
 const modalError = document.querySelector('#error');
 
 myForm.addEventListener('submit', function(event) {
@@ -234,7 +287,6 @@ myForm.addEventListener('submit', function(event) {
         }
 
         const xhr = new XMLHttpRequest();
-
         xhr.onreadystatechange = processReqChange;
 
         function processReqChange() {
@@ -254,7 +306,7 @@ myForm.addEventListener('submit', function(event) {
             }
         }
         xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(form);          
         
     }
@@ -277,40 +329,72 @@ myForm.addEventListener('submit', function(event) {
         if (!validateField(form.elements.comment)) {
             valid = false;
         }
-
         return valid;
     }
 
     function validateField(field) {
         
-        if (!field.checkValidity()) {         
+        if (!field.checkValidity()) {     
            
-            field.nextElementSibling.textContent = field.validationMessage;
-            
+            field.nextElementSibling.textContent = field.validationMessage;            
             return false;
         } else {
             field.nextElementSibling.textContent = '';
-
             return true;
         }
     }
 })
 
 const closeSuccess = document.getElementById('closeSuccess');
-
 const closeError = document.getElementById('closeError');
 
 closeSuccess.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    success.classList.remove('modal__success_active');
-    
+    e.preventDefault();    
+    success.classList.remove('modal__success_active');    
 });
-
 
 closeError.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    modalError.classList.remove('modal__error_active');
-    
+    e.preventDefault();    
+    modalError.classList.remove('modal__error_active');    
 });
+
+//api-maps:yandex.ru
+
+var myMap;
+        var geoCenter = false;
+        
+        function init() {
+            var map = new ymaps.Map('map', {
+                center: [59.94, 30.32],
+                zoom: 12,
+                controls: ['zoomControl'],
+                behaviors: ['drag']
+            });
+
+            let coords = [
+            [55.80, 37.30],
+            [55.80, 37.40],
+            [55.70, 37.30],
+            [55.70, 37.40]
+        ];
+        for (let index = 0; index < coords.length; index++) {
+            const coord = coords[index];
+            let tempLink = '<span>'+'точка на карте' + (index + 1) * 1 +'<span>'
+            let tempText = '<p>'+'точка на карте'+'</p>'
+            let tempHeader = '<h3><span style="color: black">'+'точка на карте'+'</span></h3>'
+            let baloon = tempHeader + tempText + tempLink;
+
+            myMap.geoObjects.add(new ymaps.Placemark(coord, {balloonContent: baloon}, 
+                {iconContent: index + 1,
+                iconLayout: 'default#image', 
+                iconImageHref:'map_img/map-marker.svg',  
+                iconImageSize:[37, 42],}));
+            
+            
+        }
+            myMap.setBounds(myMap.geoObjects.getBounds());
+            myMap.setZoom(myMap.getZoom()-1.4);
+
+        };
+        
+        ymaps.ready(init);

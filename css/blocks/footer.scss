@@ -4,6 +4,7 @@
     width: 100%;
     height: 3.75rem;
     background: $grey;
+    z-index: 50;
     @include phones {
         height: 7rem;
     }

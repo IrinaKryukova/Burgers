@@ -11,42 +11,8 @@
 
 <body id="body">
     <div class="wrapper">        
-        <div class="page-content">
-            <div class="container page-content__container">
-                <aside class="sidebar-scroll">
-                    <nav class="nav-scroll">
-                        <ul class="nav-scroll__list">
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link--active"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#about" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                            <li class="nav-scroll__item">
-                                <a href="#" class="nav-scroll__link"></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
-                <section class="section promo">
+        <div class="page-content">                      
+                <section class="section promo active">
                     <header class="header">
                         <div class="container header__container">
                             <div class="header__ left">
@@ -748,9 +714,29 @@
                         </ul>
                     </div>
                 </section>
-                <section class="how-work" id="work">
+                <section class="section how-work" id="work">
                     <div class="container how-work__container">
                         <h2 class="how-work__title">Как мы работаем</h2>
+                        <div class="player">
+                            <div class="player__wrapper">
+                                <div id="yt-player"></div>
+                                <div class="player__splash">
+                                    <svg class="icon-play">
+                                        <use xlink:href="./hand.svg#play"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="player__controls">
+                                <button class="player__start"></button>
+                                <div class="player__playback">
+                                    <button class="player__playback-button"></button>
+                                </div>
+                                <div class="player__duration">
+                                    <span class="player__duration-completed">0:00</span> :
+                                    <span class="player__duration-estimate">0:00</span>
+                                </div>
+                            </div>
+                          </div>
                         <video class="how-work__video" id="video" poster="how_work_img/Photo.png">
                             <source src="https://youtu.be/ISOsErt6oQQ" frameborder="0">
                             <div class="video__controls">
@@ -846,7 +832,7 @@
                     </div>
                     <!--</div>-->
                 </section>
-                <section class="section section__location" id="location">
+                <section class="section section__location" id="map">
                     <div class="yandex__map"></div>
                     <footer class="footer">
                         <div class="container footer__container">
@@ -898,72 +884,107 @@
                             </div>
             
                         </div>
-                    </footer>
-                    
-                </section>
-            </div>
+                    </footer>                    
+                </section>            
         </div>        
-        <div class="full-screen__menu" id="modal">
-            <div class="menu__logo"><img src="main_img/logo.png" class="logo__img" alt="Mr_Burger"></div>
-            <div class="menu__items">
-                <nav class="nav nav_hamburger">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a class="nav__link" href="">о нас</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">бургеры</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">команда</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">меню</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">отзывы</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="">контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div><a class="menu__close" id="menu_close" href="#">
-                <svg class="menu__close-icon">
+    </div>
+    <aside class="sidebar-scroll">
+        <nav class="nav-scroll">
+            <ul class="nav-scroll__list ">
+                <li class="nav-scroll__item active">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+                <li class="nav-scroll__item">
+                    <a href="#" class="nav-scroll__link"></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>        
+    <div class="full-screen__menu" id="modal">
+        <div class="menu__logo"><img src="main_img/logo.png" class="logo__img" alt="Mr_Burger"></div>
+        <div class="menu__items">
+            <nav class="nav nav_hamburger">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="">о нас</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">бургеры</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">команда</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">меню</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">отзывы</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="">контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div><a class="menu__close" id="menu_close" href="#">
+            <svg class="menu__close-icon">
+                <use xlink:href="./sprite.svg#close"></use>
+            </svg></a>
+    </div>
+    <div class="full-review__modal" id="fullReview__modal">
+        <div class="full-review__popup">
+            <a class="full-review__close" id="fullReviewClose" href="#">
+                <svg class="full-review__close-icon">
                     <use xlink:href="./sprite.svg#close"></use>
-                </svg></a>
-        </div>
-        <div class="full-review__modal" id="fullReview__modal">
-            <div class="full-review__popup">
-                <a class="full-review__close" id="fullReviewClose" href="#">
-                    <svg class="full-review__close-icon">
-                        <use xlink:href="./sprite.svg#close"></use>
-                    </svg>
-                </a>
-                <div class="full-review__desc">
-                    <h5 class="full-review__name">Константин Спилберг</h5>
-                    <div class="full-review__content">
-                        Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
-                        что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли
-                        о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что
-                        булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                    </div>
+                </svg>
+            </a>
+            <div class="full-review__desc">
+                <h5 class="full-review__name">Константин Спилберг</h5>
+                <div class="full-review__content">
+                    Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
+                    что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли
+                    о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что
+                    булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
                 </div>
-            </div>            
-        </div>
-        <div class="modal__success " id="success">
-            <div class="modal__content">
-                <p class="modal__text">Сообщение отправлено</p>
-                <button class="button button__close" id="closeSuccess">Закрыть</button>
             </div>
-        </div>
-        <div class="modal__error" id="error">
-            <div class="modal__content">
-                <p class="modal__text error-message">Произошла ошибка</p>
-                <button class="button button__close" id="closeError">Закрыть</button>
-            </div>              
+        </div>            
+    </div>
+    <div class="modal__success " id="success">
+        <div class="modal__content">
+            <p class="modal__text">Сообщение отправлено</p>
+            <button class="button button__close" id="closeSuccess">Закрыть</button>
         </div>
     </div>
+    <div class="modal__error" id="error">
+        <div class="modal__content">
+            <p class="modal__text error-message">Произошла ошибка</p>
+            <button class="button button__close" id="closeError">Закрыть</button>
+        </div>              
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a78d3162-385d-42f2-917c-e1d1f828e728&lang=ru_RU" type="text/javascript">
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>

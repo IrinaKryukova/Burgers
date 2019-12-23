@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<simbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol viewBox="0 0 28.685 14.479" id="arrow-scroll" xmlns="http://www.w3.org/2000/svg">
         <path d="M14.332 14.479a4.964 4.964 0 0 1-3.525-1.458L.268 1.681A1 1 0 1 1 1.733.32l10.514 11.314c1.145 1.143 3.049 1.142 4.218-.026L26.952.319a1 1 0 0 1 1.465 1.361L17.903 12.995a5.033 5.033 0 0 1-3.571 1.484z"/>
     </symbol>
@@ -92,6 +92,12 @@
     <symbol viewBox="0 0 18 18" id="close" xmlns="http://www.w3.org/2000/svg">
         <g fill-rule="evenodd" clip-rule="evenodd">
            <g opacity=".7"><path d="M17.485 3.342l-5.657 5.657 5.657 5.657a2 2 0 0 1-2.828 2.828L9 11.827l-5.657 5.657a2 2 0 1 1-2.828-2.828l5.657-5.657L.515 3.342A2 2 0 1 1 3.343.514L9 6.17 14.657.514a2 2 0 1 1 2.828 2.828z"/></g> 
+        </g>
+    </simbol>
+    <simbol viewBox="0 0 117.5 171.6" id="play" xmlns="http://www.w3.org/2000/svg">
+        <g>
+	        <path class="st0" d="M112.5,75.4l-91-72.5C12.8-4,0,2.2,0,13.3v145c0,11.1,12.8,17.3,21.5,10.4l91-72.5
+		        C119.2,90.9,119.2,80.7,112.5,75.4z"/>
         </g>
     </simbol>    
 </svg>
