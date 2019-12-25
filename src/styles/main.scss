@@ -1,0 +1,53 @@
+@function rem($px) {
+    @return $px / rem(16px) + 0rem;
+}
+//colors
+$orange: #e35028;
+$yellow: #f9b43b;
+$grey: #2f3234;
+$black: #1f2122;
+$red: #c1401e;
+$white: #fff;
+$green: #8BC03F;
+
+//media
+$phones: 480px;
+$tablets: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+//normalize
+@import "css/layout/normalize";
+
+// media
+@import "css/layout/media";
+
+//layout
+@import "css/layout/fonts";
+@import "css/layout/base";
+
+//blocks
+@import "css/blocks/header";
+@import "css/blocks/nav";
+@import "css/blocks/button";
+@import "css/blocks/title";
+@import "css/blocks/promo";
+@import "css/blocks/advantage";
+@import "css/blocks/review";
+@import "css/blocks/team";
+@import "css/blocks/menu";
+@import "css/blocks/location";
+@import "css/blocks/socials";
+@import "css/blocks/contacts";
+@import "css/blocks/footer";
+@import "css/blocks/form";
+@import "css/blocks/hanburger_menu";
+@import "css/blocks/slider";
+@import "css/blocks/full-screen_menu";
+@import "css/blocks/modal";
+@import "css/blocks/how-work";
+
+
+
+
+
