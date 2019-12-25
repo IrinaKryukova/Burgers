@@ -30,7 +30,8 @@ $(document).ready(function() {
 
             setTimeout(() => {
                 inScroll = false;
-                $('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active');
+                $('.nav-scroll__item').eq(sectionEq).addClass('active');
+                $('.nav-scroll__item').eq(sectionEq).siblings().removeClass('active');
             
             }, transitionIsOver + mouseInvertionIsOver);            
               
