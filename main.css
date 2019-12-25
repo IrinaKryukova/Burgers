@@ -2068,7 +2068,7 @@ h5 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url(../../how_work_img/how_work_bg.png) center center/cover no-repeat; }
+  background: url(how_work_img/how_work_bg.png) center center/cover no-repeat; }
 
 .how-work__container {
   display: -webkit-box;
@@ -2097,11 +2097,15 @@ h5 {
     .how-work__title {
       font-size: 4rem; } }
 
-video.how-work__video {
-  width: 100%; }
+video.player__video {
+  max-width: 41.25rem;
+  max-height: 25.3125rem; }
+  @media screen and (max-width: 480px) {
+    video.player__video {
+      max-width: 26rem; } }
 
 .player {
-  /*position: relative;*/
+  position: relative;
   display: inline-block; }
   .player.hidden {
     opacity: 0;
@@ -2112,11 +2116,21 @@ video.how-work__video {
 .player__splash {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer; }
+  display: block;
+  top: calc(50% - 1.5rem);
+  left: 50%; }
+  .player__splash.active {
+    opacity: 0; }
+
+.splash {
+  height: 0;
+  cursor: pointer;
+  border: 3rem solid transparent;
+  border-left-color: #fff;
+  padding: 0;
+  border-right-width: 0;
+  background: transparent;
+  outline: none; }
 
 .player__wrapper.active .player__splash {
   display: none; }
@@ -2148,7 +2162,8 @@ video.how-work__video {
   border-right-width: 0;
   background: transparent;
   outline: none;
-  position: relative; }
+  position: relative;
+  margin-right: 1rem; }
   .player__start.paused {
     width: 14px;
     height: 22px;

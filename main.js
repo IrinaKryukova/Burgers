@@ -8,10 +8,9 @@ $(document).ready(function() {
     const mobileDetect = new MobileDetect(window.navigator.userAgent);
     const isMobile = mobileDetect.mobile();
 
-    const changeNavScrollActiveItem = () => {
-        $('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active');
-    
-    }
+    //const changeNavScrollActiveItem = () => {
+    //    $('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active');
+    //}
 
     const performTransition = sectionEq => {
         if (inScroll) return;
@@ -31,11 +30,11 @@ $(document).ready(function() {
 
             setTimeout(() => {
                 inScroll = false;
-                changeNavScrollActiveItem();
+                $('.nav-scroll__item').eq(sectionEq).addClass('active').sublings().removeClass('active');
             
-            }, transitionIsOver + mouseInvertionIsOver);
+            }, transitionIsOver + mouseInvertionIsOver);            
               
-        }   
+    }   
     
 //touchmove, touchstart, touchend
     const scrollViewport = direction => {
@@ -51,7 +50,7 @@ $(document).ready(function() {
             performTransition(prevSection.index());
         }
 
-    }
+    };
     
     $(document).on({
         wheel: e => {
