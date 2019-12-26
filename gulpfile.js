@@ -66,13 +66,13 @@ task('styles', () => {
         .pipe(dest('dist'));
 });
 
-const libs = [
-    'node_modules/jquery/dist/jquery.js',
-    'src/scripts/*.js'
-]
+//const libs = [
+//    'node_modules/jquery/dist/jquery.js',
+//    'src/scripts/*.js'
+//]
 
 task('scripts', () => {
-    return src(libs)
+    return src([...JS_LIBS, 'src/scripts/*.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js', { newLine: ';'}))
     .pipe(babel({
@@ -94,6 +94,6 @@ task('server', () => {
 
 
 watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
-watch('./src/*.html', series('copy:html'));
-watch('./src/scripts/*.js', series('scripts'));
+watch(`./${SRC_PATH}/*.html`, series('copy:html'));
+watch(`./${SRC_PATH}/scripts/*.js`, series('scripts'));
 task('default', series('clean', parallel('copy:scss', 'copy:html', 'copy:img', 'copy:font', 'styles', 'scripts'), 'server'));
