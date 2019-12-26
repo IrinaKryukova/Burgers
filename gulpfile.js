@@ -57,8 +57,7 @@ task('styles', () => {
             cascade: false
         }))
         //.pipe(gcmq())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        //.pipe(uglify())
+        .pipe(cleanCSS({compatibility: 'ie8'}))        
         .pipe(sourcemaps.write())
         .pipe(dest('dist'));
 });
@@ -75,6 +74,7 @@ task('scripts', () => {
     .pipe(babel({
         presets: ['@babel/env']
     }))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(dest('dist'));
 })
