@@ -129,12 +129,12 @@ $(document).ready(function() {
     $('.slider__btn').on('click', function(e){
         e.preventDefault();
 
-        var $this = $(this),
-            container = $this.closest('.slider'),
-            sliders = $('.burger__item', container),
-            activeItem = sliders.filter('.active'),
-            nextSlide = activeItem.next();
-            prevSlide = activeItem.prev();
+        var $this = $(this);
+        var container = $this.closest('.slider');
+        var sliders = $('.burger__item', container);
+        var activeItem = sliders.filter('.active');
+        var nextSlide = activeItem.next();
+        var prevSlide = activeItem.prev();
 
         if ($this.hasClass('arrow__right')) { //вперед
 
