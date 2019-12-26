@@ -11,8 +11,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');    
 const {SRC_PATH, DIST_PATH, STYLES_LIBS, JS_LIBS} = require('./gulp.config');
-
 const gulpif = require('gulp-if');
+
+const env = process.env.NODE_ENV;
 
 sass.compiler = require('node-sass');
 
@@ -43,57 +44,47 @@ task('copy:font', () => {
     return src(`${SRC_PATH}/fonts/**`)
         .pipe(dest(`${DIST_PATH}/fonts/`));
 });
-/*
-const styles = [
-    'node_modules/normalize.css/normalize.css',
-    'src/styles/main.scss'
-]
-*/
 
 task('styles', () => {
     return src([...STYLES_LIBS, 'src/styles/main.scss'])
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(env==='dev', sourcemaps.init()))
         .pipe(concat('main.min.scss'))
         .pipe(sass().on('error', sass.logError))
         .pipe(px2rem())
-        .pipe(autoprefixer({
+        .pipe(gulpif(env==='dev',
+            autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
-        }))
-        //.pipe(gcmq())
-        .pipe(cleanCSS({compatibility: 'ie8'}))        
-        .pipe(sourcemaps.write())
+        })))
+        .pipe(gulpif(env === 'prod', gcmq()))
+        .pipe(gulpif(env === 'prod', cleanCSS({compatibility: 'ie8'})))        
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist'));
 });
 
-//const libs = [
-//    'node_modules/jquery/dist/jquery.js',
-//    'src/scripts/*.js'
-//]
-
 task('scripts', () => {
     return src([...JS_LIBS, 'src/scripts/*.js'])
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(env === 'dev', sourcemaps.init()))
     .pipe(concat('main.min.js', { newLine: ';'}))
-    .pipe(babel({
+    .pipe(gulpif(env === 'prod', babel({
         presets: ['@babel/env']
-    }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
+    })))
+    .pipe(gulpif(env === 'prod', uglify()))
+    .pipe(gulpif(env === 'dev', sourcemaps.write()))
     .pipe(dest('dist'));
 })
 
 task('server', () => {
     browserSync.init({
         server: {
-            baseDir: `./${DIST_PATH}`
+            baseDir: './dist'
         },
         open: false
     });
 });
 
 
-watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
-watch(`./${SRC_PATH}/*.html`, series('copy:html'));
-watch(`./${SRC_PATH}/scripts/*.js`, series('scripts'));
-task('default', series('clean', parallel('copy:scss', 'copy:html', 'copy:img', 'copy:font', 'styles', 'scripts'), 'server'));
+watch('./src/styles/**/*.scss', series('styles'));
+watch('./src/*.html', series('copy:html'));
+watch('./src/scripts/*.js', series('scripts'));
+task('default', series('clean', parallel('copy:html', 'copy:img', 'copy:font', 'styles', 'scripts'), 'server'));
