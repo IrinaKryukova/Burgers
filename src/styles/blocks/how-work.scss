@@ -25,8 +25,8 @@
 }
 
 video.player__video {
-    max-width: 41.25rem;
-    max-height: 25.3125rem;
+    max-width: 35rem;
+    max-height: 20rem;
     @include phones {
       max-width: 26rem;
     }
@@ -45,8 +45,8 @@ video.player__video {
     content: "";
     position: absolute;
     display: block;
-    top: calc(50% - 1.5rem);
-    left: 50%;
+    top: calc(50% - 3rem);
+    left: calc(50% - 1.5rem);
    
 
     &.active {
@@ -106,7 +106,7 @@ video.player__video {
         content: "";
         display: block;
         position: absolute;
-        width: 0.3125;
+        width: 0.3125rem;
         top: 0;
         bottom: 0;
         background: #626262;
@@ -124,7 +124,7 @@ video.player__video {
     height: 1rem;
     width: 27.875rem;
     position: relative;
-  
+    outline: none;
     &:before {
       content: "";
       height: 0.25rem;

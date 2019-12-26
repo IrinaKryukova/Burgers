@@ -42,6 +42,7 @@ const eventsInit = () => {
         if (player.paused) {
             player.play();
             btn.addClass('paused');
+            $('.splash').hide();
         } else {
             player.pause();
             btn.removeClass('paused');
@@ -63,19 +64,21 @@ $(".player__playback").on("click", e => {
     const bar = $(e.currentTarget);
     const newButtonPosition = e.pageX - bar.offset().left;
     const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
-    const newPlayerTimeSec = (player.getDuration() / 100) * buttonPosPercent;
+    const newPlayerTimeSec = (player.duration / 100) * buttonPosPercent;
 
+    
     $(".player__playback-button").css({
       left: `${buttonPosPercent}%`
     });
 
-    player.seekTo(newPlayerTimeSec);
+    player.currentTime = newPlayerTimeSec;
   });
 
 $('.player__splash').on('click', e => {
         player.play();
         $('.player__splash').addClass('active');
-
+        $('.player__start').addClass('paused');
+        
 });
   
 };
