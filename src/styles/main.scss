@@ -17,36 +17,35 @@ $laptop: 992px;
 $desktop: 1200px;
 
 //normalize
-@import "css/layout/normalize";
+//@import "css/layout/normalize";
 
 // media
-@import "css/layout/media";
+@import "layout/media";
 
 //layout
-@import "css/layout/fonts";
-@import "css/layout/base";
+@import "layout/fonts";
+@import "layout/base";
 
 //blocks
-@import "css/blocks/header";
-@import "css/blocks/nav";
-@import "css/blocks/button";
-@import "css/blocks/title";
-@import "css/blocks/promo";
-@import "css/blocks/advantage";
-@import "css/blocks/review";
-@import "css/blocks/team";
-@import "css/blocks/menu";
-@import "css/blocks/location";
-@import "css/blocks/socials";
-@import "css/blocks/contacts";
-@import "css/blocks/footer";
-@import "css/blocks/form";
-@import "css/blocks/hanburger_menu";
-@import "css/blocks/slider";
-@import "css/blocks/full-screen_menu";
-@import "css/blocks/modal";
-@import "css/blocks/how-work";
-
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/button";
+@import "blocks/title";
+@import "blocks/promo";
+@import "blocks/advantage";
+@import "blocks/review";
+@import "blocks/team";
+@import "blocks/menu";
+@import "blocks/location";
+@import "blocks/socials";
+@import "blocks/contacts";
+@import "blocks/footer";
+@import "blocks/form";
+@import "blocks/hanburger_menu";
+@import "blocks/slider";
+@import "blocks/full-screen_menu";
+@import "blocks/modal";
+@import "blocks/how-work";
 
 
 

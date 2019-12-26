@@ -18,11 +18,26 @@
   },
   "homepage": "https://github.com/IrinaKryukova/Burgers#readme",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "jquery": "^3.4.1",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "browser-sync": "^2.26.7",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-pixel2rem": "0.0.5",
     "gulp-rm": "^2.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-smile-px2rem": "^0.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "node-sass": "^4.13.0"
   }
 }
