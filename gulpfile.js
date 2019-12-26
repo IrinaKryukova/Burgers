@@ -56,8 +56,8 @@ task('styles', () => {
             browsers: ['last 2 versions'],
             cascade: false
         })))
-        .pipe(gulpif(env === 'prod', gcmq()))
-        .pipe(gulpif(env === 'prod', cleanCSS({compatibility: 'ie8'})))        
+        //.pipe(gulpif(env === 'prod', gcmq()))
+        .pipe(gulpif(env === 'prod', cleanCSS({compatibility: 'ie8'})))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist'));
 });
