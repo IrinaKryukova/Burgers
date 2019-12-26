@@ -1,4 +1,4 @@
-const { src, dest, task, series, watch } = require('gulp');
+const { src, dest, task, series, watch, parallel } = require('gulp');
 const rm = require('gulp-rm');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
@@ -9,45 +9,49 @@ const gcmq = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify');    
+const {SRC_PATH, DIST_PATH, STYLES_LIBS, JS_LIBS} = require('./gulp.config');
+
+const gulpif = require('gulp-if');
 
 sass.compiler = require('node-sass');
 
 task('clean', () => {
-    return src( 'dist/**/*', { read: false })
+    return src(`${DIST_PATH}/**/*`, { read: false })
         .pipe(rm());
   });
 
 
  
 task('copy:scss', () => {
-    return src('src/**/*.scss')
-        .pipe(dest('dist')); 
+    return src(`${SRC_PATH}/**/*.scss`)
+        .pipe(dest(DIST_PATH)); 
 });
 
 task('copy:html', () => {
-    return src('src/*.html')
-        .pipe(dest('dist'))
+    return src(`${SRC_PATH}/*.html`)
+        .pipe(dest(DIST_PATH))
         .pipe(browserSync.reload({stream: true})); 
 });
 
 task('copy:img', () => {
-    return src('src/img/**')
-        .pipe(dest('dist'));
+    return src(`${SRC_PATH}/img/**`)
+        .pipe(dest(DIST_PATH));
 });
 
 task('copy:font', () => {
-    return src('src/fonts/**')
-        .pipe(dest('dist/fonts/'));
+    return src(`${SRC_PATH}/fonts/**`)
+        .pipe(dest(`${DIST_PATH}/fonts/`));
 });
-
+/*
 const styles = [
     'node_modules/normalize.css/normalize.css',
     'src/styles/main.scss'
 ]
+*/
 
 task('styles', () => {
-    return src(styles)
+    return src([...STYLES_LIBS, 'src/styles/main.scss'])
         .pipe(sourcemaps.init())
         .pipe(concat('main.min.scss'))
         .pipe(sass().on('error', sass.logError))
@@ -82,14 +86,14 @@ task('scripts', () => {
 task('server', () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: `./${DIST_PATH}`
         },
         open: false
     });
 });
 
 
-watch('./src/styles/**/*.scss', series('styles'));
+watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
 watch('./src/*.html', series('copy:html'));
 watch('./src/scripts/*.js', series('scripts'));
-task('default', series('clean', 'copy:scss', 'copy:html', 'copy:img', 'copy:font', 'styles', 'scripts', 'server'));
+task('default', series('clean', parallel('copy:scss', 'copy:html', 'copy:img', 'copy:font', 'styles', 'scripts'), 'server'));
