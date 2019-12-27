@@ -52,27 +52,37 @@ const eventsInit = () => {
     player.ontimeupdate = function() {
         var barWidth = $('.player__playback').width();
         var length = player.duration;
-        //console.log(player.currentTime);
-        //console.log(barWidth);
-        console.log((player.currentTime / length) * barWidth);
-    $(".player__playback-button").css({
-        left: `${(player.currentTime / length) * 100}%`
-    });
-};
+        $(".player__playback-button").css({
+          left: `${(player.currentTime / length) * 100}%`
+        });
+    };
 
-$(".player__playback").on("click", e => {
+
+    $(".player__playback").on("click", e => {
+        const bar = $(e.currentTarget);
+        const newButtonPosition = e.pageX - bar.offset().left;
+        const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
+        const newPlayerTimeSec = (player.duration / 100) * buttonPosPercent;
+
+        
+        $(".player__playback-button").css({
+          left: `${buttonPosPercent}%`
+        });
+
+        player.currentTime = newPlayerTimeSec;
+      });
+
+$(".player__volume").on("click", e => {
     const bar = $(e.currentTarget);
     const newButtonPosition = e.pageX - bar.offset().left;
-    const buttonPosPercent = (newButtonPosition / bar.width()) * 100;
-    const newPlayerTimeSec = (player.duration / 100) * buttonPosPercent;
-
+    const volume = (newButtonPosition / bar.width());
     
-    $(".player__playback-button").css({
-      left: `${buttonPosPercent}%`
+    player.volume = volume;
+    $(".volume__button").css({
+      left: `${volume*100}%`
     });
+})
 
-    player.currentTime = newPlayerTimeSec;
-  });
 
 $('.player__splash').on('click', e => {
         player.play();
@@ -97,6 +107,10 @@ const onPlayerStateChange = event => {
     case 1: 
       $('.player__wrapper').addClass('active');
       playerButton.addClass("paused");
+      console.log('aaaaaaaaaaaaaaaaaaaaa');
+      $(".volume__button").css({
+        left: `${player.volume*100}%`
+      });
       break;
     case 2: 
       playerButton.removeClass("paused");

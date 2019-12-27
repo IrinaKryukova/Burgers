@@ -182,8 +182,13 @@ video.player__video {
     padding: 0;
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);    
+  }
+  .player__playback-button {
     left: 0;
+  }
+  .volume__button {
+    left: 100%;
   }
   
   .player__duration {
